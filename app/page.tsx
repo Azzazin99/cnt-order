@@ -1,65 +1,53 @@
+import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+import { DocumentTable } from "@/components/document-table";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { getDocuments } from "@/lib/documents";
+
+export default async function Home() {
+  const rows = await getDocuments({ kind: "public" });
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="min-h-screen bg-gradient-to-b from-stone-100 to-amber-50/50 px-4 py-8 text-stone-800 dark:from-stone-950 dark:to-stone-900 dark:text-stone-100">
+      <div className="mx-auto w-full max-w-6xl rounded-2xl border border-stone-200 bg-white/95 p-4 shadow-lg shadow-stone-300/20 md:p-6 dark:border-stone-800 dark:bg-stone-950 dark:shadow-black/20">
+        <div className="mb-4 flex flex-wrap items-center justify-end gap-2">
+          <Link
+            href="/admin"
+            className="rounded-lg border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition duration-200 hover:-translate-y-0.5 hover:bg-stone-100 dark:border-stone-700 dark:text-stone-200 dark:hover:bg-stone-800"
           >
+            จัดการเอกสาร
+          </Link>
+          <ThemeToggle />
+        </div>
+
+        <header className="mb-7 text-center">
+          <div className="mx-auto mb-3 flex h-28 w-28 items-center justify-center rounded-2xl border border-amber-100 bg-white shadow-sm shadow-amber-200/40 dark:border-amber-900/50 dark:bg-stone-900 dark:shadow-black/30">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/3D-Logo.png"
+              alt="โลโก้หน่วยงาน"
+              width={92}
+              height={92}
+              className="h-24 w-24 object-contain"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+          <h1 className="notion-heading text-2xl font-bold tracking-[0.02em] text-stone-900 md:text-4xl dark:text-stone-100">
+            คลังคำสั่ง
+            <span className="bg-gradient-to-r from-amber-700 via-orange-600 to-rose-500 bg-clip-text text-transparent dark:from-amber-300 dark:via-orange-300 dark:to-rose-300">
+              ออนไลน์
+            </span>
+          </h1>
+          <p className="mx-auto mt-1 max-w-3xl text-base font-medium leading-relaxed text-stone-700 md:text-xl dark:text-stone-200">
+            สำนักงานเขตพื้นที่การศึกษาประถมศึกษาชัยนาท
+          </p>
+          <p className="mx-auto mt-2 inline-flex rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-800 md:text-base dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-300">
+            เอกสารคำสั่งและหนังสือราชการ
+          </p>
+        </header>
+
+        <DocumentTable rows={rows} />
+      </div>
+    </main>
   );
 }

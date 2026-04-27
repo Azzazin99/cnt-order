@@ -1,0 +1,56 @@
+[
+  {
+    "id": "f40ea927-3367-4225-ad4f-cc378c8f3520",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบสำเร็จ (username: admin, role: admin)",
+    "createdAt": "25/4/2569 14:37:48"
+  },
+  {
+    "id": "aed84a68-5e9e-4679-9535-b58e7d6d5446",
+    "action": "LOGOUT",
+    "detail": "ออกจากระบบ (username: viewer)",
+    "createdAt": "25/4/2569 14:37:03"
+  },
+  {
+    "id": "0ccccbac-34cb-4f1d-8db1-d3437a82cf31",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบสำเร็จ (username: viewer, role: viewer)",
+    "createdAt": "25/4/2569 14:36:59"
+  },
+  {
+    "id": "948fd90e-da4e-40b9-a092-95711d9d2c3c",
+    "action": "LOGOUT",
+    "detail": "ออกจากระบบ (username: editor)",
+    "createdAt": "25/4/2569 14:36:50"
+  },
+  {
+    "id": "0df77c69-2466-452d-834d-1aa1d708aec6",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบสำเร็จ (username: editor, role: editor)",
+    "createdAt": "25/4/2569 14:36:47"
+  },
+  {
+    "id": "468c412c-8a97-4de4-be95-56f82525ca37",
+    "action": "LOGOUT",
+    "detail": "ออกจากระบบ (username: admin)",
+    "createdAt": "25/4/2569 14:36:29"
+  },
+  {
+    "id": "d07c6161-2a07-4dcc-ad04-b27c50928cbd",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบสำเร็จ (username: admin, role: admin)",
+    "createdAt": "25/4/2569 14:23:57"
+  },
+  {
+    "id": "633d80cc-687f-46f5-83d5-44929946fb55",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบไม่สำเร็จ (username: admin)",
+    "createdAt": "25/4/2569 14:23:46"
+  },
+  {
+    "id": "4aef1072-0767-4807-9f46-171a6e3ee326",
+    "action": "LOGIN",
+    "detail": "เข้าสู่ระบบไม่สำเร็จ (username: admin)",
+    "createdAt": "25/4/2569 14:23:14"
+  }
+]

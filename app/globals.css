@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+/* ให้คำสั่ง dark: ทำงานเมื่อมีคลาส .dark บน ancestor (ไม่ใช่แค่ prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f5f2;
+  --foreground: #2f2a24;
 }
 
 @theme inline {
@@ -12,15 +15,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Sarabun", "Noto Sans Thai", Arial, Helvetica, sans-serif;
+}
+
+.notion-heading {
+  font-family: "Noto Serif Thai", "Georgia", "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+.dark {
+  --background: #171614;
+  --foreground: #ede8df;
 }
