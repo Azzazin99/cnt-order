@@ -1,1 +1,1094 @@
-[]
+[
+  {
+    "id": "2c03d718-a27d-41e0-8ae1-c453a872d830",
+    "name": "โรงเรียนวัดส่องคบ(ท้ายเมืองอนุสรณ์)",
+    "schoolCode": "18010004",
+    "moeCode": "1018090015",
+    "status": "active"
+  },
+  {
+    "id": "e68563c9-3566-496c-92c5-d614b71dd51f",
+    "name": "โรงเรียนวัดฝาง",
+    "schoolCode": "18010005",
+    "moeCode": "1018090016",
+    "status": "active"
+  },
+  {
+    "id": "dab035a1-e172-4bf8-8581-b18b8439b232",
+    "name": "โรงเรียนวัดไผ่โพธิ์ทอง",
+    "schoolCode": "18010006",
+    "moeCode": "1018090017",
+    "status": "active"
+  },
+  {
+    "id": "963e5d66-ecbe-44e4-8da4-9afd24fbd84c",
+    "name": "โรงเรียนวัดงิ้ว(เรือไทยสงเคราะห์4)",
+    "schoolCode": "18010008",
+    "moeCode": "1018090019",
+    "status": "active"
+  },
+  {
+    "id": "38e1676e-7580-4549-9153-e4420893fda7",
+    "name": "โรงเรียนวัดธรรมามูล",
+    "schoolCode": "18010012",
+    "moeCode": "1018090029",
+    "status": "active"
+  },
+  {
+    "id": "b547b151-37e9-4482-b5f7-708b2b2e5e57",
+    "name": "โรงเรียนชุมชนวัดดักคะนน",
+    "schoolCode": "18010013",
+    "moeCode": "1018090030",
+    "status": "active"
+  },
+  {
+    "id": "4a71e574-9c64-41f8-add3-e6f939a914f0",
+    "name": "โรงเรียนวัดสระเนินพระราม",
+    "schoolCode": "18010015",
+    "moeCode": "1018090032",
+    "status": "active"
+  },
+  {
+    "id": "b7708f21-a861-44ae-b7e8-b193a715a284",
+    "name": "โรงเรียนบ้านหนองแค",
+    "schoolCode": "18010016",
+    "moeCode": "1018090009",
+    "status": "active"
+  },
+  {
+    "id": "7f045bef-4e05-468a-abb0-f8bdded0f310",
+    "name": "โรงเรียนวัดใหม่ศรัทธาราษฎร์",
+    "schoolCode": "18010017",
+    "moeCode": "1018090006",
+    "status": "active"
+  },
+  {
+    "id": "a5e72c21-310c-4d0c-8bcb-acdf8e807991",
+    "name": "โรงเรียนชุมชนวัดวังเคียน",
+    "schoolCode": "18010018",
+    "moeCode": "1018090007",
+    "status": "active"
+  },
+  {
+    "id": "436699be-888d-4b90-940b-2e387e226d5a",
+    "name": "โรงเรียนวัดนางลือ",
+    "schoolCode": "18010019",
+    "moeCode": "1018090008",
+    "status": "active"
+  },
+  {
+    "id": "ded1b14a-47bb-488e-a591-1a5b3690227a",
+    "name": "โรงเรียนพระยาตาก",
+    "schoolCode": "18010021",
+    "moeCode": "1018090003",
+    "status": "active"
+  },
+  {
+    "id": "efed8da0-ff40-4405-a567-c43dce0f9e67",
+    "name": "โรงเรียนอนุบาลชัยนาท",
+    "schoolCode": "18010022",
+    "moeCode": "1018090004",
+    "status": "active"
+  },
+  {
+    "id": "41dd99b4-edc9-40ee-bf8b-05efbfa437ad",
+    "name": "โรงเรียนลัดดาประชาสรรค์",
+    "schoolCode": "18010023",
+    "moeCode": "1018090005",
+    "status": "active"
+  },
+  {
+    "id": "c802bfdb-ee8d-47be-941c-c22540821422",
+    "name": "โรงเรียนอนุบาลเมืองชัยนาท",
+    "schoolCode": "18010024",
+    "moeCode": "1018090021",
+    "status": "active"
+  },
+  {
+    "id": "c432a13a-b5ba-46ae-8284-3971ab1df839",
+    "name": "โรงเรียนวัดโรงวัว",
+    "schoolCode": "18010025",
+    "moeCode": "1018090026",
+    "status": "active"
+  },
+  {
+    "id": "141d5c5e-2e09-44ef-82ec-76f92625be9c",
+    "name": "โรงเรียนวัดแหลมหว้า",
+    "schoolCode": "18010027",
+    "moeCode": "1018090022",
+    "status": "active"
+  },
+  {
+    "id": "b6e0c08f-eb79-4ea7-9910-1185818dcd08",
+    "name": "โรงเรียนวัดดอนรังนก",
+    "schoolCode": "18010028",
+    "moeCode": "1018090023",
+    "status": "active"
+  },
+  {
+    "id": "90ace285-8fd6-432e-a283-4f6bd98367c7",
+    "name": "โรงเรียนวัดหนองพังนาค",
+    "schoolCode": "18010029",
+    "moeCode": "1018090024",
+    "status": "active"
+  },
+  {
+    "id": "b6a5dbfa-258e-4852-9f89-d0fc9b26e48e",
+    "name": "โรงเรียนวัดเนินถ่าน",
+    "schoolCode": "18010030",
+    "moeCode": "1018090025",
+    "status": "active"
+  },
+  {
+    "id": "a4f5d845-d09f-401c-a0be-3353dcc11ff0",
+    "name": "โรงเรียนรัฐเขื่อนพลเทพอุปถัมภ์",
+    "schoolCode": "18010031",
+    "moeCode": "1018090010",
+    "status": "active"
+  },
+  {
+    "id": "d955626e-87c1-4b67-b2a6-c03f5a0b020f",
+    "name": "โรงเรียนชุมชนวัดศรีมณีวรรณ(ธรรมศิริอุปถัมภ์)",
+    "schoolCode": "18010034",
+    "moeCode": "1018090037",
+    "status": "active"
+  },
+  {
+    "id": "f7829bbf-794d-45b9-be1a-977e729dc022",
+    "name": "โรงเรียนอนุบาลมโนรมย์(วัดศรีสิทธิ์สุวรรณวัฒนะ)",
+    "schoolCode": "18010035",
+    "moeCode": "1018090038",
+    "status": "active"
+  },
+  {
+    "id": "6b9311e7-31a5-45f3-b92f-d2c2f5c8cd99",
+    "name": "โรงเรียนวัดใหญ่(นากประสุตประชานุสรณ์)",
+    "schoolCode": "18010038",
+    "moeCode": "1018090043",
+    "status": "active"
+  },
+  {
+    "id": "ef25c0e1-f9b6-45dc-b8ed-136df5141a12",
+    "name": "โรงเรียนไทยรัฐวิทยา57(บ้านท่าฉนวน)",
+    "schoolCode": "18010039",
+    "moeCode": "1018090044",
+    "status": "active"
+  },
+  {
+    "id": "20c80f76-a313-4f37-962d-572b0f440618",
+    "name": "โรงเรียนวัดหัวยาง(รัฐราษฎร์นุเคราะห์)",
+    "schoolCode": "18010040",
+    "moeCode": "1018090045",
+    "status": "active"
+  },
+  {
+    "id": "8a0e8529-9d75-45ea-a956-0c44149344c4",
+    "name": "โรงเรียนบ้านไร่พัฒนา(ราษฎร์บูรณะวิทยา)",
+    "schoolCode": "18010043",
+    "moeCode": "1018090056",
+    "status": "active"
+  },
+  {
+    "id": "163724b7-5a65-4670-b75d-aee55b85d8ec",
+    "name": "โรงเรียนบ้านหัวถนน",
+    "schoolCode": "18010045",
+    "moeCode": "1018090058",
+    "status": "active"
+  },
+  {
+    "id": "850684c0-d6e3-4cdf-91e9-16a536959cba",
+    "name": "โรงเรียนวัดหัวหว้า",
+    "schoolCode": "18010047",
+    "moeCode": "1018090060",
+    "status": "active"
+  },
+  {
+    "id": "486f4d07-5e89-4304-9d1b-7e5e4e01648d",
+    "name": "โรงเรียนวัดโคกแจง(ประชานุกุลวิทยาสำนักงานสลากกินแบ่งสมทบสร้าง)",
+    "schoolCode": "18010049",
+    "moeCode": "1018090039",
+    "status": "active"
+  },
+  {
+    "id": "a8e436da-5ba5-4655-87d6-ca42ffb18062",
+    "name": "โรงเรียนวัดธรรมขันธ์(ประชาสงเคราะห์)",
+    "schoolCode": "18010052",
+    "moeCode": "1018090040",
+    "status": "active"
+  },
+  {
+    "id": "2684e6f8-8544-4f81-bd9a-1362c36afc58",
+    "name": "โรงเรียนชุมชนบ้านหางน้ำสาคร(รัฐราษฎร์ร่วมจิตร)",
+    "schoolCode": "18010053",
+    "moeCode": "1018090048",
+    "status": "active"
+  },
+  {
+    "id": "af109a3a-c1d4-4ddd-a455-5accda104f86",
+    "name": "โรงเรียนคงรักษ์ประชานุเคราะห์",
+    "schoolCode": "18010056",
+    "moeCode": "1018090053",
+    "status": "active"
+  },
+  {
+    "id": "21593a4b-16e0-4481-9377-2f5a7d819750",
+    "name": "โรงเรียนวัดหนองตาตน",
+    "schoolCode": "18010058",
+    "moeCode": "1018090049",
+    "status": "active"
+  },
+  {
+    "id": "42e68f89-06b8-4adb-880f-0fcaa44524eb",
+    "name": "โรงเรียนวัดหนองจิก",
+    "schoolCode": "18010061",
+    "moeCode": "1018090076",
+    "status": "active"
+  },
+  {
+    "id": "78f099ba-a9c1-46bb-9c24-7418bc329b59",
+    "name": "โรงเรียนวัดคลองบุญ",
+    "schoolCode": "18010063",
+    "moeCode": "1018090067",
+    "status": "active"
+  },
+  {
+    "id": "90a82b12-0e53-4a5b-a48a-37a917f40b93",
+    "name": "โรงเรียนอนุบาลวัดสิงห์",
+    "schoolCode": "18010065",
+    "moeCode": "1018090069",
+    "status": "active"
+  },
+  {
+    "id": "00a51c9b-3b96-4d1c-bd54-f3098ff26a5b",
+    "name": "โรงเรียนสำราญราษฎร์บำรุง",
+    "schoolCode": "18010067",
+    "moeCode": "1018090063",
+    "status": "active"
+  },
+  {
+    "id": "75b47de9-075a-4e35-a859-de1e15b5ea08",
+    "name": "โรงเรียนวัดวังหมัน",
+    "schoolCode": "18010068",
+    "moeCode": "1018090064",
+    "status": "active"
+  },
+  {
+    "id": "934c821d-901f-4192-a3bb-4dbcd196f4cd",
+    "name": "โรงเรียนบ้านท่าข้ามวังน้ำ",
+    "schoolCode": "18010069",
+    "moeCode": "1018090066",
+    "status": "active"
+  },
+  {
+    "id": "4edbcce0-5233-4c71-88ec-b227dfa93cee",
+    "name": "โรงเรียนบ้านหนองขุ่นมิตรภาพที่136",
+    "schoolCode": "18010071",
+    "moeCode": "1018090075",
+    "status": "active"
+  },
+  {
+    "id": "7a45c56a-3630-45f4-82b4-5a3f5c8297f6",
+    "name": "โรงเรียนวัดโคกสุก",
+    "schoolCode": "18010074",
+    "moeCode": "1018090065",
+    "status": "active"
+  },
+  {
+    "id": "ce5afd34-2869-49ee-b871-7c8a47a865e2",
+    "name": "โรงเรียนวัดดอนตาล",
+    "schoolCode": "18010075",
+    "moeCode": "1018090061",
+    "status": "active"
+  },
+  {
+    "id": "60b1e217-c105-4bdc-b126-b89fe092bf97",
+    "name": "โรงเรียนวัดดอนตูมกมลาวาส",
+    "schoolCode": "18010076",
+    "moeCode": "1018090073",
+    "status": "active"
+  },
+  {
+    "id": "985df22e-a384-4489-b96d-cbbcace9eab0",
+    "name": "โรงเรียนวัดนมโฑ(สำนักงานสลากกินแบ่งสมทบสร้าง338)",
+    "schoolCode": "18010078",
+    "moeCode": "1018090132",
+    "status": "active"
+  },
+  {
+    "id": "10f28ff5-cee0-43bc-94d6-f7530cbdfd0a",
+    "name": "โรงเรียนวัดเขาแก้ว",
+    "schoolCode": "18010079",
+    "moeCode": "1018090133",
+    "status": "active"
+  },
+  {
+    "id": "4877d745-27d4-4bcb-adac-6aeab06f93e7",
+    "name": "โรงเรียนชุมชนวัดโคกเข็ม(พุทธสรานุสรณ์)",
+    "schoolCode": "18010081",
+    "moeCode": "1018090125",
+    "status": "active"
+  },
+  {
+    "id": "13cc9632-b95b-4f9c-8f1d-3c2ebe816dc4",
+    "name": "โรงเรียนวัดบ้านหนอง",
+    "schoolCode": "18010082",
+    "moeCode": "1018090126",
+    "status": "active"
+  },
+  {
+    "id": "5ab0b688-c97e-4e9e-af9f-732ac291cb3a",
+    "name": "โรงเรียนบางไก่เถื่อน(ตันติวิสิษฐ์ประชานุกูล)",
+    "schoolCode": "18010083",
+    "moeCode": "1018090127",
+    "status": "active"
+  },
+  {
+    "id": "cc6d324b-7088-4ee6-9a53-693e5768d94f",
+    "name": "โรงเรียนวัดอินทาราม(เสนาณรงค์อุปถัมภ์3)",
+    "schoolCode": "18010084",
+    "moeCode": "1018090124",
+    "status": "active"
+  },
+  {
+    "id": "abcd1878-ad11-4795-b0f2-1308ff7fe01f",
+    "name": "โรงเรียนเขื่อนเจ้าพระยา",
+    "schoolCode": "18010085",
+    "moeCode": "1018090115",
+    "status": "active"
+  },
+  {
+    "id": "cc2b2b84-2321-4b26-b2af-b604a0881bef",
+    "name": "โรงเรียนวัดกรุณา",
+    "schoolCode": "18010087",
+    "moeCode": "1018090118",
+    "status": "active"
+  },
+  {
+    "id": "a182aac2-e0d3-4651-b7ec-ba2ed3ed60a7",
+    "name": "โรงเรียนวัดมะฝ่อ(สรรพวิทยา)",
+    "schoolCode": "18010088",
+    "moeCode": "1018090136",
+    "status": "active"
+  },
+  {
+    "id": "51a86ed4-fdd8-4648-bb49-ce7b906b8cbe",
+    "name": "โรงเรียนบ้านคลองยาง",
+    "schoolCode": "18010090",
+    "moeCode": "1018090138",
+    "status": "active"
+  },
+  {
+    "id": "dcc1faeb-a35c-418d-b2aa-998dbc94ed0c",
+    "name": "โรงเรียนวัดตะกู(สมจิตรัชนีอุปถัมภ์)",
+    "schoolCode": "18010091",
+    "moeCode": "1018090139",
+    "status": "active"
+  },
+  {
+    "id": "8fb7bea1-afaf-4e82-a449-7a50c3c95271",
+    "name": "โรงเรียนวัดคงคาราม(คุ้มมั่นพุมมะระประชาสรรค์)",
+    "schoolCode": "18010092",
+    "moeCode": "1018090140",
+    "status": "active"
+  },
+  {
+    "id": "7e7baa6d-83f4-4786-bedd-df249bd20a70",
+    "name": "โรงเรียนวัดมะปราง",
+    "schoolCode": "18010093",
+    "moeCode": "1018090128",
+    "status": "active"
+  },
+  {
+    "id": "b7955047-0d97-415a-90cb-96d1daa615ba",
+    "name": "โรงเรียนวัดสมอ(วุฒาประชานุเคราะห์)",
+    "schoolCode": "18010095",
+    "moeCode": "1018090130",
+    "status": "active"
+  },
+  {
+    "id": "c8f5ebe6-3e7c-4d49-b2e1-37b59281b22a",
+    "name": "โรงเรียนวัดดอนตะไล้",
+    "schoolCode": "18010097",
+    "moeCode": "1018090116",
+    "status": "active"
+  },
+  {
+    "id": "06eaa591-fd82-4a96-ad27-37ef30d44e83",
+    "name": "โรงเรียนอนุบาลสรรพยา",
+    "schoolCode": "18010098",
+    "moeCode": "1018090119",
+    "status": "active"
+  },
+  {
+    "id": "b3f61f32-1cec-43c7-8aca-1a66d56fbd1f",
+    "name": "โรงเรียนวัดโพธิมงคล",
+    "schoolCode": "18010099",
+    "moeCode": "1018090120",
+    "status": "active"
+  },
+  {
+    "id": "3597afdc-6d76-4d7d-91d6-fdbcff002dbe",
+    "name": "โรงเรียนวัดยางศรีเจริญ",
+    "schoolCode": "18010102",
+    "moeCode": "1018090123",
+    "status": "active"
+  },
+  {
+    "id": "fad8b6db-eb4b-4214-9e28-ecae41348332",
+    "name": "โรงเรียนวัดศรีมงคล(สถิตมงคลราษฎร์อุปถัมภ์)",
+    "schoolCode": "18010103",
+    "moeCode": "1018090121",
+    "status": "active"
+  },
+  {
+    "id": "5cad5abc-b0da-4221-b79f-44db5f7ae178",
+    "name": "โรงเรียนวัดโพธิ์ประสิทธิ์",
+    "schoolCode": "18010104",
+    "moeCode": "1018090122",
+    "status": "active"
+  },
+  {
+    "id": "810cab13-ddf3-4d2b-a2da-8850d42da3ab",
+    "name": "โรงเรียนวัดหาดอาษา",
+    "schoolCode": "18010105",
+    "moeCode": "1018090135",
+    "status": "active"
+  },
+  {
+    "id": "bd8cf396-4c76-40ec-ac46-df0288798fe6",
+    "name": "โรงเรียนบ้านทุ่งกระถิน",
+    "schoolCode": "18010106",
+    "moeCode": "1018090101",
+    "status": "active"
+  },
+  {
+    "id": "28cbdf66-6e13-4c85-b3af-076e3c0b452a",
+    "name": "โรงเรียนชุมชนวัดโคกดอกไม้",
+    "schoolCode": "18010107",
+    "moeCode": "1018090102",
+    "status": "active"
+  },
+  {
+    "id": "6cfe11bd-0871-49f3-898f-08d76ac29c51",
+    "name": "โรงเรียนวัดเทพรัตนวนาราม",
+    "schoolCode": "18010108",
+    "moeCode": "1018090103",
+    "status": "active"
+  },
+  {
+    "id": "654d73d7-001b-4320-9842-6508994061a5",
+    "name": "โรงเรียนเทพรัตน์",
+    "schoolCode": "18010110",
+    "moeCode": "1018090105",
+    "status": "active"
+  },
+  {
+    "id": "e7fa7e9e-045f-4111-a855-cc80afb1243c",
+    "name": "โรงเรียนวัดอารีทวีวนาราม",
+    "schoolCode": "18010111",
+    "moeCode": "1018090106",
+    "status": "active"
+  },
+  {
+    "id": "a09badb4-883c-46e1-88b9-a1ac801f6277",
+    "name": "โรงเรียนวัดหนองแขม",
+    "schoolCode": "18010112",
+    "moeCode": "1018090107",
+    "status": "active"
+  },
+  {
+    "id": "fff42920-501e-4023-8452-0ff6f2b4b24b",
+    "name": "โรงเรียนวัดโพธิ์งาม",
+    "schoolCode": "18010113",
+    "moeCode": "1018090083",
+    "status": "active"
+  },
+  {
+    "id": "da71d383-08bc-4b69-b30f-64227f35495a",
+    "name": "โรงเรียนวัดสนามชัย",
+    "schoolCode": "18010114",
+    "moeCode": "1018090084",
+    "status": "active"
+  },
+  {
+    "id": "4156898d-a71f-45f0-86d2-5febbfe71f1a",
+    "name": "โรงเรียนวัดสังฆาราม(ปลื้มประชาสงเคราะห์)",
+    "schoolCode": "18010115",
+    "moeCode": "1018090093",
+    "status": "active"
+  },
+  {
+    "id": "f569ec4e-91e1-4e03-84d0-53b66a97ed4f",
+    "name": "โรงเรียนวัดมะเห-ยงคณ์(ประชาเนรมิต)",
+    "schoolCode": "18010116",
+    "moeCode": "1018090094",
+    "status": "active"
+  },
+  {
+    "id": "ef32bed5-9818-45a1-9969-1ef284cf5d52",
+    "name": "โรงเรียนวัดท่ากระแส",
+    "schoolCode": "18010117",
+    "moeCode": "1018090092",
+    "status": "active"
+  },
+  {
+    "id": "ffa09e53-4c6a-4a43-9dfb-3839c6407ba5",
+    "name": "โรงเรียนวัดโพธิ์ทอง",
+    "schoolCode": "18010118",
+    "moeCode": "1018090089",
+    "status": "active"
+  },
+  {
+    "id": "8bd5c4fb-c4e1-45e0-a465-6bfbb32684e9",
+    "name": "โรงเรียนวัดหัวเด่น",
+    "schoolCode": "18010119",
+    "moeCode": "1018090085",
+    "status": "active"
+  },
+  {
+    "id": "45c48389-a5d2-4089-9aa3-88a66397e437",
+    "name": "โรงเรียนวัดโฆสิตาราม",
+    "schoolCode": "18010120",
+    "moeCode": "1018090086",
+    "status": "active"
+  },
+  {
+    "id": "0c96ed23-bd48-47b8-a544-f028001d84f9",
+    "name": "โรงเรียนวัดหอระฆัง",
+    "schoolCode": "18010121",
+    "moeCode": "1018090109",
+    "status": "active"
+  },
+  {
+    "id": "98058948-8412-4828-8547-d42389587336",
+    "name": "โรงเรียนวัดสกุณาราม(ประสิทธิ์ชัยประชาสรรค์)",
+    "schoolCode": "18010122",
+    "moeCode": "1018090087",
+    "status": "active"
+  },
+  {
+    "id": "bfc6f267-7251-48ae-9b05-7b158663e938",
+    "name": "โรงเรียนวัดท่าสมอ(สำนักงานสลากกินแบ่งสงเคราะห์258)",
+    "schoolCode": "18010123",
+    "moeCode": "1018090088",
+    "status": "active"
+  },
+  {
+    "id": "3b4292d7-3455-46d5-a1b3-6fa51baa28e3",
+    "name": "โรงเรียนวัดสระไม้แดง",
+    "schoolCode": "18010124",
+    "moeCode": "1018090099",
+    "status": "active"
+  },
+  {
+    "id": "cfec0a0e-96eb-469d-b607-4dc450dfcd6e",
+    "name": "โรงเรียนวัดกำแพง",
+    "schoolCode": "18010125",
+    "moeCode": "1018090100",
+    "status": "active"
+  },
+  {
+    "id": "56dc8ae0-27d5-44d7-bb98-a180626bd273",
+    "name": "โรงเรียนวัดหัวตะพาน",
+    "schoolCode": "18010126",
+    "moeCode": "1018090108",
+    "status": "active"
+  },
+  {
+    "id": "dec296b2-078c-45c3-b24b-20cd7ea591bc",
+    "name": "โรงเรียนวัดพระแก้ว",
+    "schoolCode": "18010127",
+    "moeCode": "1018090095",
+    "status": "active"
+  },
+  {
+    "id": "c719d613-fef0-48dd-a294-49838b151b81",
+    "name": "โรงเรียนอนุบาลสรรคบุรี",
+    "schoolCode": "18010128",
+    "moeCode": "1018090096",
+    "status": "active"
+  },
+  {
+    "id": "a76ed5de-1a4c-4b2c-ba70-625c9a44506b",
+    "name": "โรงเรียนวัดโพธาราม",
+    "schoolCode": "18010130",
+    "moeCode": "1018090098",
+    "status": "active"
+  },
+  {
+    "id": "f8f0c74e-19ea-44d9-ba78-e09cf1353533",
+    "name": "โรงเรียนวัดพร้าว",
+    "schoolCode": "18010131",
+    "moeCode": "1018090090",
+    "status": "active"
+  },
+  {
+    "id": "edac2d26-4fff-4c97-abe3-1a35bc8180be",
+    "name": "โรงเรียนวัดโบสถ์ราษฎร์บำรุง",
+    "schoolCode": "18010132",
+    "moeCode": "1018090091",
+    "status": "active"
+  },
+  {
+    "id": "5295d4ce-a0e9-4edf-8dda-e5b6af91bc99",
+    "name": "โรงเรียนวัดท่า",
+    "schoolCode": "18010133",
+    "moeCode": "1018090079",
+    "status": "active"
+  },
+  {
+    "id": "b397e244-47dd-4499-912b-a46b2a22a1b2",
+    "name": "โรงเรียนวัดธรรมิกาวาส",
+    "schoolCode": "18010134",
+    "moeCode": "1018090080",
+    "status": "active"
+  },
+  {
+    "id": "aa2cb587-651d-47e8-9710-494feb1a8682",
+    "name": "โรงเรียนวัดจั่นเจริญศรี",
+    "schoolCode": "18010135",
+    "moeCode": "1018090081",
+    "status": "active"
+  },
+  {
+    "id": "f877487a-f2a6-441c-98cd-b473f9bbac8a",
+    "name": "โรงเรียนวัดบำเพ็ญบุญ",
+    "schoolCode": "18010137",
+    "moeCode": "1018090112",
+    "status": "active"
+  },
+  {
+    "id": "0300e825-06d5-46be-ae55-b9fd6e52fbe8",
+    "name": "โรงเรียนวัดจันทน์",
+    "schoolCode": "18010138",
+    "moeCode": "1018090114",
+    "status": "active"
+  },
+  {
+    "id": "3b97c342-b584-4f0f-b699-36f1be3d7905",
+    "name": "โรงเรียนวัดคลองงิ้ว",
+    "schoolCode": "18010139",
+    "moeCode": "1018090113",
+    "status": "active"
+  },
+  {
+    "id": "cd741929-a766-44cf-9aa8-0b85b267da4e",
+    "name": "โรงเรียนวัดดอนโพธิ์ศรี",
+    "schoolCode": "18010140",
+    "moeCode": "1018090111",
+    "status": "active"
+  },
+  {
+    "id": "e3586e4e-c564-48e2-8eb8-de66deb4b35c",
+    "name": "โรงเรียนชุมชนวัดมาติการาม",
+    "schoolCode": "18010141",
+    "moeCode": "1018090110",
+    "status": "active"
+  },
+  {
+    "id": "d87a3be9-0dc5-422c-9e5f-96a18e2fdf83",
+    "name": "โรงเรียนวัดราษฎร์ศรัทธาราม",
+    "schoolCode": "18010142",
+    "moeCode": "1018090161",
+    "status": "active"
+  },
+  {
+    "id": "83ac492c-8746-4924-8a58-80ce0572cd6a",
+    "name": "โรงเรียนวัดเด่นใหญ่",
+    "schoolCode": "18010143",
+    "moeCode": "1018090163",
+    "status": "active"
+  },
+  {
+    "id": "00dc835f-3049-4521-9952-b62930d92647",
+    "name": "โรงเรียนบ้านสระแก้ว",
+    "schoolCode": "18010144",
+    "moeCode": "1018090164",
+    "status": "active"
+  },
+  {
+    "id": "f24bee4d-a521-4e31-b4f5-b2471c2c8c1d",
+    "name": "โรงเรียนบ้านหนองแจง",
+    "schoolCode": "18010145",
+    "moeCode": "1018090147",
+    "status": "active"
+  },
+  {
+    "id": "24629f69-2f30-4915-967b-7c0e4adc0fb8",
+    "name": "โรงเรียนวัดประชุมธรรม(สัจจะญาณ)",
+    "schoolCode": "18010146",
+    "moeCode": "1018090149",
+    "status": "active"
+  },
+  {
+    "id": "495afbe8-08ed-4d28-b03c-601f61d14374",
+    "name": "โรงเรียนวัดวิจิตรังสิตาราม",
+    "schoolCode": "18010147",
+    "moeCode": "1018090150",
+    "status": "active"
+  },
+  {
+    "id": "7903ee94-75b8-4c43-acde-d7b81e138170",
+    "name": "โรงเรียนชุมชนวัดพิชัยนาวาส(รัฐราษฎร์ประดิษฐ์วิทยา)",
+    "schoolCode": "18010148",
+    "moeCode": "1018090151",
+    "status": "active"
+  },
+  {
+    "id": "ad58d9eb-d9c6-4f87-a56e-1ad7f19a7d9a",
+    "name": "โรงเรียนวัดบ้านใหม่",
+    "schoolCode": "18010149",
+    "moeCode": "1018090152",
+    "status": "active"
+  },
+  {
+    "id": "39d6708b-fd4d-4e33-8949-6bae8e10a5da",
+    "name": "โรงเรียนไกรราษฎร์วิทยา",
+    "schoolCode": "18010150",
+    "moeCode": "1018090153",
+    "status": "active"
+  },
+  {
+    "id": "6dfe833e-f152-4feb-b1b1-be3247fe5e16",
+    "name": "โรงเรียนบ้านวังเดือนห้า",
+    "schoolCode": "18010151",
+    "moeCode": "1018090148",
+    "status": "active"
+  },
+  {
+    "id": "200f3d9e-03c5-4480-92e7-fc0b469f5dd5",
+    "name": "โรงเรียนบ้านรางจิก",
+    "schoolCode": "18010152",
+    "moeCode": "1018090143",
+    "status": "active"
+  },
+  {
+    "id": "d02981ea-03db-4a5c-98bc-937c51b6b9d5",
+    "name": "โรงเรียนวัดพรหมวิหาร",
+    "schoolCode": "18010153",
+    "moeCode": "1018090144",
+    "status": "active"
+  },
+  {
+    "id": "9f43a46b-7cb6-41a5-b4eb-0bc59d607170",
+    "name": "โรงเรียนบ้านไพรนกยูง(วันชัยประชาสรรค์)",
+    "schoolCode": "18010154",
+    "moeCode": "1018090145",
+    "status": "active"
+  },
+  {
+    "id": "6d0a0e2c-b7bb-45ea-8027-53386b9f3437",
+    "name": "โรงเรียนบ้านหนองอ้ายสาม",
+    "schoolCode": "18010155",
+    "moeCode": "1018090146",
+    "status": "active"
+  },
+  {
+    "id": "534985d8-a2f2-4981-bf58-6304a5590238",
+    "name": "โรงเรียนวัดคลองธรรม",
+    "schoolCode": "18010156",
+    "moeCode": "1018090154",
+    "status": "active"
+  },
+  {
+    "id": "3efd7795-771c-4791-98ac-ba48d3f77ce9",
+    "name": "โรงเรียนบ้านดอนกะโดน",
+    "schoolCode": "18010157",
+    "moeCode": "1018090155",
+    "status": "active"
+  },
+  {
+    "id": "53002b05-ebb1-4784-b6ec-afd4aa09fee5",
+    "name": "โรงเรียนท่าบ้านหลวง(รัฐรังสรรค์วิทยา)",
+    "schoolCode": "18010158",
+    "moeCode": "1018090156",
+    "status": "active"
+  },
+  {
+    "id": "41df1dc0-10c3-4cfa-874f-d5ded81bf0e0",
+    "name": "โรงเรียนวัดวิจิตรรังสรรค์",
+    "schoolCode": "18010159",
+    "moeCode": "1018090157",
+    "status": "active"
+  },
+  {
+    "id": "12e6ca4d-d47b-4af1-8ee2-782ed3ee3873",
+    "name": "โรงเรียนวัดสะตือสิงห์(ประดิษฐ์ราษฎร์อุปถัมภ์)",
+    "schoolCode": "18010160",
+    "moeCode": "1018090158",
+    "status": "active"
+  },
+  {
+    "id": "b14cff01-51aa-46cb-9da7-906c5cbc42c2",
+    "name": "โรงเรียนวัดถ้ำเข้",
+    "schoolCode": "18010161",
+    "moeCode": "1018090159",
+    "status": "active"
+  },
+  {
+    "id": "f3523f17-40c3-4ff5-89b2-bfafa89efe5e",
+    "name": "โรงเรียนวัดวงเดือน",
+    "schoolCode": "18010162",
+    "moeCode": "1018090166",
+    "status": "active"
+  },
+  {
+    "id": "49cc8a1b-e147-43f0-b424-d658707ba908",
+    "name": "โรงเรียนวัดคลองเกษม",
+    "schoolCode": "18010163",
+    "moeCode": "1018090168",
+    "status": "active"
+  },
+  {
+    "id": "bfc5e26f-a7b6-41e9-8800-c2c6fa39565e",
+    "name": "โรงเรียนวัดท่าโบสถ์(สำนักงานสลากกินแบ่งสงเคราะห์343)",
+    "schoolCode": "18010164",
+    "moeCode": "1018090169",
+    "status": "active"
+  },
+  {
+    "id": "956eff02-7d25-47d3-acd1-41240c228c23",
+    "name": "โรงเรียนวัดศรีเจริญธรรม",
+    "schoolCode": "18010165",
+    "moeCode": "1018090174",
+    "status": "active"
+  },
+  {
+    "id": "e2beed1b-f591-476e-910b-ee1bb511a749",
+    "name": "โรงเรียนวัดอรัญญวาสี",
+    "schoolCode": "18010166",
+    "moeCode": "1018090175",
+    "status": "active"
+  },
+  {
+    "id": "41f55d57-57ca-4512-ac2c-cd288ed303eb",
+    "name": "โรงเรียนบ้านชัฏฝาง",
+    "schoolCode": "18010167",
+    "moeCode": "1018090176",
+    "status": "active"
+  },
+  {
+    "id": "5f7cc675-9f53-41ba-82f2-34f0b2635958",
+    "name": "โรงเรียนดอนสีนวน(สำนักงานสลากกินแบ่งสงเคราะห์523",
+    "schoolCode": "18010168",
+    "moeCode": "1018090177",
+    "status": "active"
+  },
+  {
+    "id": "e2e67735-84b3-4b46-8eb2-d1a8bdadb00d",
+    "name": "โรงเรียนวัดสระดู่",
+    "schoolCode": "18010170",
+    "moeCode": "1018090179",
+    "status": "active"
+  },
+  {
+    "id": "1e6020eb-c757-4c37-8298-4018196dc577",
+    "name": "โรงเรียนวัดทองนพคุณ",
+    "schoolCode": "18010171",
+    "moeCode": "1018090173",
+    "status": "active"
+  },
+  {
+    "id": "98216bf0-1772-4422-a744-f93e2fe3e9b3",
+    "name": "โรงเรียนบ้านหมื่นเทพ",
+    "schoolCode": "18010172",
+    "moeCode": "1018090171",
+    "status": "active"
+  },
+  {
+    "id": "7db33f9b-5e9a-42f3-9d07-581f77d28c5e",
+    "name": "โรงเรียนวัดท่าแก้ว",
+    "schoolCode": "18010173",
+    "moeCode": "1018090172",
+    "status": "active"
+  },
+  {
+    "id": "44db83b0-5ec4-4bd6-9d8d-f94b2631745e",
+    "name": "โรงเรียนชุมชนคลองจันทน์",
+    "schoolCode": "18010174",
+    "moeCode": "1018090170",
+    "status": "active"
+  },
+  {
+    "id": "02b43325-2447-48a3-83cf-f16ff959feb0",
+    "name": "โรงเรียนวัดโคกหมู",
+    "schoolCode": "18010175",
+    "moeCode": "1018090167",
+    "status": "active"
+  },
+  {
+    "id": "4575f082-eff5-44ca-bc91-a69ffbbc6b30",
+    "name": "โรงเรียนบ้านหนองต่อ",
+    "schoolCode": "18010176",
+    "moeCode": "1018090165",
+    "status": "active"
+  },
+  {
+    "id": "f676b27e-2062-433b-8810-c02b80180887",
+    "name": "โรงเรียนอนุบาลหันคา(วัดท่ากฤษณา-สุชัยประชาสรรค์)",
+    "schoolCode": "18010177",
+    "moeCode": "1018090162",
+    "status": "active"
+  },
+  {
+    "id": "2fdd3307-64bc-4384-8138-426fb0fe6310",
+    "name": "โรงเรียนวัดสวนอัมพวัน",
+    "schoolCode": "18010178",
+    "moeCode": "1018090160",
+    "status": "active"
+  },
+  {
+    "id": "47a72fb6-96fd-4c90-a6e6-dab60f65cc6b",
+    "name": "โรงเรียนวัดศรีสโมสร",
+    "schoolCode": "18010180",
+    "moeCode": "1018090192",
+    "status": "active"
+  },
+  {
+    "id": "004091f3-6209-4c3c-ad21-a83238388beb",
+    "name": "โรงเรียนบ้านวังตะเคียน(ขยันการนาวีราษฎร์อุทิศ)",
+    "schoolCode": "18010182",
+    "moeCode": "1018090183",
+    "status": "active"
+  },
+  {
+    "id": "a0eb516d-c06d-4939-9d28-1170bbd18ab9",
+    "name": "โรงเรียนวัดวังน้ำขาว",
+    "schoolCode": "18010184",
+    "moeCode": "1018090180",
+    "status": "active"
+  },
+  {
+    "id": "77a06b27-4ab7-4866-a62b-2408a8f7baa7",
+    "name": "โรงเรียนบ้านหนองหวาย",
+    "schoolCode": "18010185",
+    "moeCode": "1018090181",
+    "status": "active"
+  },
+  {
+    "id": "4b44f0e0-d1cf-4321-b79f-ebe4d0ff5102",
+    "name": "โรงเรียนอนุบาลหนองมะโมง",
+    "schoolCode": "18010186",
+    "moeCode": "1018090182",
+    "status": "active"
+  },
+  {
+    "id": "e697f3e8-8221-4b5f-8abb-073150fcf2ae",
+    "name": "โรงเรียนบ้านน้ำพุ",
+    "schoolCode": "18010187",
+    "moeCode": "1018090190",
+    "status": "active"
+  },
+  {
+    "id": "cc82619a-252e-4fa5-a99e-379b864988a3",
+    "name": "โรงเรียนบ้านสะพานหิน(ประชาสามัคคี)",
+    "schoolCode": "18010188",
+    "moeCode": "1018090191",
+    "status": "active"
+  },
+  {
+    "id": "6353ec13-56bd-44cd-92f4-65d4dd86815f",
+    "name": "โรงเรียนบ้านโพธิ์ทองชัยประสิทธิ์(จำลองราษฎร์อุปถัมภ์)",
+    "schoolCode": "18010190",
+    "moeCode": "1018090194",
+    "status": "active"
+  },
+  {
+    "id": "f6fe2d45-e141-42d0-90d5-a8871b44d964",
+    "name": "โรงเรียนบ้านหนองตะขบ",
+    "schoolCode": "18010192",
+    "moeCode": "1018090184",
+    "status": "active"
+  },
+  {
+    "id": "13e656d0-3b14-4feb-95cf-08e5334507d5",
+    "name": "โรงเรียนวัดเขาดิน (วันครู 2502)",
+    "schoolCode": "18010194",
+    "moeCode": "1018090187",
+    "status": "active"
+  },
+  {
+    "id": "fba36523-1b9f-4dae-af69-20cd29b9c39c",
+    "name": "โรงเรียนบ้านเขาเกล็ด",
+    "schoolCode": "18010195",
+    "moeCode": "1018090188",
+    "status": "active"
+  },
+  {
+    "id": "c89fbd04-4672-4c61-994a-348b9a7a0850",
+    "name": "โรงเรียนบ้านบ่อยายส้ม(แก้วประชาสรรค์)",
+    "schoolCode": "18010196",
+    "moeCode": "1018090196",
+    "status": "active"
+  },
+  {
+    "id": "ebb4681d-50cc-47cf-95b3-27c581febbf2",
+    "name": "โรงเรียนบ้านเก่า",
+    "schoolCode": "18010197",
+    "moeCode": "1018090203",
+    "status": "active"
+  },
+  {
+    "id": "bc4caddd-2dd9-453b-9b92-fb024d03d514",
+    "name": "โรงเรียนบ้านทุ่งโพธิ์",
+    "schoolCode": "18010198",
+    "moeCode": "1018090204",
+    "status": "active"
+  },
+  {
+    "id": "c55aa2bf-3e7c-4e8b-a351-4a164509cc81",
+    "name": "โรงเรียนบ้านกะบกเตี้ย",
+    "schoolCode": "18010199",
+    "moeCode": "1018090207",
+    "status": "active"
+  },
+  {
+    "id": "32e87883-db2e-4550-96df-2287cbc1c03a",
+    "name": "โรงเรียนบ้านเขาราวเทียนทอง(ประดิษฐ์ราษฎร์อุปถัมภ์)",
+    "schoolCode": "18010201",
+    "moeCode": "1018090200",
+    "status": "active"
+  },
+  {
+    "id": "4ae05629-1e60-4067-9115-1705814b55d7",
+    "name": "โรงเรียนอนุบาลเนินขาม",
+    "schoolCode": "18010202",
+    "moeCode": "1018090198",
+    "status": "active"
+  },
+  {
+    "id": "054c82fc-cae7-4803-95f6-a3227dc44209",
+    "name": "โรงเรียนบ้านวังคอไห(สงฆ์ประชาชนูทิศ)",
+    "schoolCode": "18010203",
+    "moeCode": "1018090201",
+    "status": "active"
+  },
+  {
+    "id": "dd307d6c-c29a-4193-b1fd-84bd8f1af237",
+    "name": "โรงเรียนบ้านหนองยาง",
+    "schoolCode": "18010204",
+    "moeCode": "1018090205",
+    "status": "active"
+  },
+  {
+    "id": "f3299c0a-8dd6-4373-a96b-54ee83a381f6",
+    "name": "โรงเรียนบ้านสุขเดือนห้า",
+    "schoolCode": "18010205",
+    "moeCode": "1018090206",
+    "status": "active"
+  },
+  {
+    "id": "843d375e-0eb3-4125-ab1e-b35f62e956ac",
+    "name": "โรงเรียนบ้านท่าไม้",
+    "schoolCode": "18010010",
+    "moeCode": "1018090002",
+    "status": "active"
+  },
+  {
+    "id": "00bf6888-df97-4475-bdb1-a65a089a5a5e",
+    "name": "โรงเรียนวัดศรีวิชัย",
+    "schoolCode": "18010020",
+    "moeCode": "1018090001",
+    "status": "active"
+  }
+]

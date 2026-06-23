@@ -1,14 +1,19 @@
 import { promises as fs } from "fs";
 import path from "path";
+import {
+  DEFAULT_CATEGORY,
+  type DocumentCategory,
+  isDocumentCategory,
+} from "@/lib/document-categories";
 import { dbQuery, isDatabaseEnabled } from "@/lib/db";
-import { hasVerifiedSchoolDomains } from "@/lib/schools";
+import { isMultiSchoolMode } from "@/lib/schools";
 
 export type DocumentItem = {
   id: string;
   issuedAt: string;
   orderNo: string;
   title: string;
-  department: string;
+  category: DocumentCategory;
   orderDate: string;
   fileUrl: string;
   schoolId?: string | null;
@@ -17,10 +22,59 @@ export type DocumentItem = {
 export type DocumentListScope =
   | { kind: "all" }
   | { kind: "public" }
-  | { kind: "school"; schoolId: string };
+  | { kind: "school"; schoolId: string }
+  | { kind: "none" };
 
 const dataFilePath = path.join(process.cwd(), "data", "documents.json");
 const uploadsDirPath = path.join(process.cwd(), "public", "uploads");
+
+type DocumentRow = {
+  id: string;
+  issued_at: string;
+  order_no: string;
+  title: string;
+  category: string;
+  order_date: string;
+  file_url: string;
+  school_id: string | null;
+};
+
+type LegacyDocumentJson = Partial<DocumentItem> & {
+  department?: string;
+};
+
+function normalizeCategory(value: unknown): DocumentCategory {
+  if (typeof value === "string" && isDocumentCategory(value)) {
+    return value;
+  }
+  return DEFAULT_CATEGORY;
+}
+
+function mapRow(row: DocumentRow): DocumentItem {
+  return {
+    id: row.id,
+    issuedAt: row.issued_at,
+    orderNo: row.order_no,
+    title: row.title,
+    category: normalizeCategory(row.category),
+    orderDate: row.order_date,
+    fileUrl: row.file_url,
+    schoolId: row.school_id,
+  };
+}
+
+function mapJsonItem(raw: LegacyDocumentJson): DocumentItem {
+  return {
+    id: raw.id ?? crypto.randomUUID(),
+    issuedAt: raw.issuedAt ?? new Date().toLocaleString("th-TH"),
+    orderNo: raw.orderNo ?? "",
+    title: raw.title ?? "",
+    category: normalizeCategory(raw.category),
+    orderDate: raw.orderDate ?? "",
+    fileUrl: raw.fileUrl ?? "#",
+    schoolId: raw.schoolId ?? null,
+  };
+}
 
 async function ensureDataFile() {
   const dir = path.dirname(dataFilePath);
@@ -33,44 +87,17 @@ async function ensureDataFile() {
   }
 }
 
-function mapRow(row: {
-  id: string;
-  issued_at: string;
-  order_no: string;
-  title: string;
-  department: string;
-  order_date: string;
-  file_url: string;
-  school_id: string | null;
-}): DocumentItem {
-  return {
-    id: row.id,
-    issuedAt: row.issued_at,
-    orderNo: row.order_no,
-    title: row.title,
-    department: row.department,
-    orderDate: row.order_date,
-    fileUrl: row.file_url,
-    schoolId: row.school_id,
-  };
-}
-
 export async function getDocuments(scope: DocumentListScope = { kind: "all" }) {
-  const multi = await hasVerifiedSchoolDomains();
+  if (scope.kind === "none") {
+    return [];
+  }
+
+  const multi = await isMultiSchoolMode();
 
   if (isDatabaseEnabled()) {
     if (scope.kind === "all") {
-      const { rows } = await dbQuery<{
-        id: string;
-        issued_at: string;
-        order_no: string;
-        title: string;
-        department: string;
-        order_date: string;
-        file_url: string;
-        school_id: string | null;
-      }>(`
-        SELECT id, issued_at, order_no, title, department, order_date, file_url, school_id
+      const { rows } = await dbQuery<DocumentRow>(`
+        SELECT id, issued_at, order_no, title, category, order_date, file_url, school_id
         FROM documents
         ORDER BY sort_id DESC
       `);
@@ -78,34 +105,16 @@ export async function getDocuments(scope: DocumentListScope = { kind: "all" }) {
     }
     if (scope.kind === "public") {
       if (!multi) {
-        const { rows } = await dbQuery<{
-          id: string;
-          issued_at: string;
-          order_no: string;
-          title: string;
-          department: string;
-          order_date: string;
-          file_url: string;
-          school_id: string | null;
-        }>(`
-          SELECT id, issued_at, order_no, title, department, order_date, file_url, school_id
+        const { rows } = await dbQuery<DocumentRow>(`
+          SELECT id, issued_at, order_no, title, category, order_date, file_url, school_id
           FROM documents
           ORDER BY sort_id DESC
         `);
         return rows.map((row) => mapRow(row));
       }
-      const { rows } = await dbQuery<{
-        id: string;
-        issued_at: string;
-        order_no: string;
-        title: string;
-        department: string;
-        order_date: string;
-        file_url: string;
-        school_id: string | null;
-      }>(
+      const { rows } = await dbQuery<DocumentRow>(
         `
-        SELECT id, issued_at, order_no, title, department, order_date, file_url, school_id
+        SELECT id, issued_at, order_no, title, category, order_date, file_url, school_id
         FROM documents
         WHERE school_id IS NULL
         ORDER BY sort_id DESC
@@ -113,38 +122,36 @@ export async function getDocuments(scope: DocumentListScope = { kind: "all" }) {
       );
       return rows.map((row) => mapRow(row));
     }
-    const { rows } = await dbQuery<{
-      id: string;
-      issued_at: string;
-      order_no: string;
-      title: string;
-      department: string;
-      order_date: string;
-      file_url: string;
-      school_id: string | null;
-    }>(
-      `
-      SELECT id, issued_at, order_no, title, department, order_date, file_url, school_id
-      FROM documents
-      WHERE school_id = $1
-      ORDER BY sort_id DESC
-    `,
-      [scope.schoolId],
-    );
-    return rows.map((row) => mapRow(row));
+    if (scope.kind === "school") {
+      const { rows } = await dbQuery<DocumentRow>(
+        `
+        SELECT id, issued_at, order_no, title, category, order_date, file_url, school_id
+        FROM documents
+        WHERE school_id = $1
+        ORDER BY sort_id DESC
+      `,
+        [scope.schoolId],
+      );
+      return rows.map((row) => mapRow(row));
+    }
+    return [];
   }
 
   await ensureDataFile();
   const raw = await fs.readFile(dataFilePath, "utf-8");
-  const parsed = JSON.parse(raw) as DocumentItem[];
+  const parsed = JSON.parse(raw) as LegacyDocumentJson[];
+  const items = parsed.map((item) => mapJsonItem(item));
   if (scope.kind === "all") {
-    return parsed;
+    return items;
   }
   if (scope.kind === "public") {
-    if (!multi) return parsed;
-    return parsed.filter((d) => d.schoolId == null || d.schoolId === "");
+    if (!multi) return items;
+    return items.filter((d) => d.schoolId == null || d.schoolId === "");
   }
-  return parsed.filter((d) => d.schoolId === scope.schoolId);
+  if (scope.kind === "school") {
+    return items.filter((d) => d.schoolId === scope.schoolId);
+  }
+  return [];
 }
 
 async function saveDocuments(items: DocumentItem[]) {
@@ -163,7 +170,7 @@ export async function addDocument(
       issuedAt: new Date().toLocaleString("th-TH"),
       orderNo: payload.orderNo,
       title: payload.title,
-      department: payload.department,
+      category: payload.category,
       orderDate: payload.orderDate,
       fileUrl: payload.fileUrl,
       schoolId,
@@ -171,14 +178,14 @@ export async function addDocument(
 
     await dbQuery(
       `INSERT INTO documents
-        (id, issued_at, order_no, title, department, order_date, file_url, school_id)
+        (id, issued_at, order_no, title, category, order_date, file_url, school_id)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
       [
         newItem.id,
         newItem.issuedAt,
         newItem.orderNo,
         newItem.title,
-        newItem.department,
+        newItem.category,
         newItem.orderDate,
         newItem.fileUrl,
         schoolId,
@@ -193,7 +200,7 @@ export async function addDocument(
     issuedAt: new Date().toLocaleString("th-TH"),
     orderNo: payload.orderNo,
     title: payload.title,
-    department: payload.department,
+    category: payload.category,
     orderDate: payload.orderDate,
     fileUrl: payload.fileUrl,
     schoolId,
@@ -212,17 +219,8 @@ export async function saveUploadedPdf(fileName: string, bytes: Uint8Array) {
 
 export async function getDocumentById(id: string): Promise<DocumentItem | null> {
   if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      id: string;
-      issued_at: string;
-      order_no: string;
-      title: string;
-      department: string;
-      order_date: string;
-      file_url: string;
-      school_id: string | null;
-    }>(
-      `SELECT id, issued_at, order_no, title, department, order_date, file_url, school_id
+    const { rows } = await dbQuery<DocumentRow>(
+      `SELECT id, issued_at, order_no, title, category, order_date, file_url, school_id
        FROM documents WHERE id = $1`,
       [id],
     );
@@ -236,19 +234,10 @@ export async function getDocumentById(id: string): Promise<DocumentItem | null> 
 
 export async function removeDocument(id: string) {
   if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      id: string;
-      issued_at: string;
-      order_no: string;
-      title: string;
-      department: string;
-      order_date: string;
-      file_url: string;
-      school_id: string | null;
-    }>(
+    const { rows } = await dbQuery<DocumentRow>(
       `DELETE FROM documents
        WHERE id = $1
-       RETURNING id, issued_at, order_no, title, department, order_date, file_url, school_id`,
+       RETURNING id, issued_at, order_no, title, category, order_date, file_url, school_id`,
       [id],
     );
     const row = rows[0];
@@ -269,33 +258,26 @@ export async function updateDocument(
 ) {
   if (isDatabaseEnabled()) {
     const issuedAt = new Date().toLocaleString("th-TH");
-    const { rows } = await dbQuery<{
-      id: string;
-      issued_at: string;
-      order_no: string;
-      title: string;
-      department: string;
-      order_date: string;
-      file_url: string;
-      school_id: string | null;
-    }>(
+    const { rows } = await dbQuery<DocumentRow>(
       `UPDATE documents
        SET issued_at = $2,
            order_no = $3,
            title = $4,
-           department = $5,
+           category = $5,
            order_date = $6,
-           file_url = $7
+           file_url = $7,
+           school_id = $8
        WHERE id = $1
-       RETURNING id, issued_at, order_no, title, department, order_date, file_url, school_id`,
+       RETURNING id, issued_at, order_no, title, category, order_date, file_url, school_id`,
       [
         id,
         issuedAt,
         payload.orderNo,
         payload.title,
-        payload.department,
+        payload.category,
         payload.orderDate,
         payload.fileUrl,
+        payload.schoolId ?? null,
       ],
     );
 

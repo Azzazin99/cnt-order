@@ -3,14 +3,13 @@
 import { FormEvent, useState } from "react";
 
 import type { SchoolRecord } from "@/lib/schools";
-import type { AuthProvider, UserRole } from "@/lib/users";
+import type { UserRole } from "@/lib/users";
 
 type SafeUser = {
   username: string;
   role: UserRole;
   email: string | null;
   schoolId: string | null;
-  authProvider: AuthProvider;
 };
 
 type NewUserForm = {
@@ -38,11 +37,13 @@ export function UserManagement({
   currentUsername,
   isPlatformAdmin,
   schools,
+  embedded = false,
 }: {
   initialUsers: SafeUser[];
   currentUsername: string;
   isPlatformAdmin: boolean;
   schools: SchoolRecord[];
+  embedded?: boolean;
 }) {
   const [users, setUsers] = useState<SafeUser[]>(initialUsers);
   const [form, setForm] = useState<NewUserForm>(initialForm);
@@ -145,8 +146,12 @@ export function UserManagement({
     setMessage({ type: "success", text: `ลบผู้ใช้ ${username} เรียบร้อย` });
   }
 
+  const sectionClass = embedded
+    ? ""
+    : "mt-8 rounded-xl border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-950/60";
+
   return (
-    <section className="mt-8 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm dark:border-stone-800 dark:bg-stone-950/60">
+    <section className={sectionClass}>
       <h2 className="notion-heading mb-3 text-lg font-semibold text-stone-900 dark:text-stone-100">
         จัดการผู้ใช้ระบบ
       </h2>
@@ -222,13 +227,12 @@ export function UserManagement({
         </button>
       </form>
 
-      <div className="overflow-x-auto rounded-2xl border border-stone-200 dark:border-stone-800">
+      <div className="overflow-x-auto rounded-xl border border-stone-200 dark:border-stone-800">
         <table className="min-w-full border-collapse text-sm">
           <thead>
             <tr className="bg-stone-50 text-left text-stone-700 dark:bg-stone-900 dark:text-stone-200">
               <th className="px-3 py-2">Username</th>
               <th className="px-3 py-2">Email</th>
-              <th className="px-3 py-2">Auth</th>
               <th className="px-3 py-2">โรงเรียน</th>
               <th className="px-3 py-2">Role</th>
               <th className="px-3 py-2">รีเซ็ตรหัสผ่าน</th>
@@ -241,8 +245,6 @@ export function UserManagement({
               const schoolName =
                 schools.find((s) => s.id === (user.schoolId || ""))?.name ??
                 (user.schoolId ? user.schoolId : "—");
-              const canResetPassword =
-                isPlatformAdmin || user.authProvider === "local";
               return (
                 <tr
                   key={user.username}
@@ -259,7 +261,6 @@ export function UserManagement({
                   <td className="max-w-[140px] truncate px-3 py-2 text-xs">
                     {user.email ?? "—"}
                   </td>
-                  <td className="px-3 py-2 text-xs">{user.authProvider}</td>
                   <td className="px-3 py-2 text-xs">{schoolName}</td>
                   <td className="px-3 py-2">
                     <select
@@ -284,15 +285,12 @@ export function UserManagement({
                             [user.username]: e.target.value,
                           }))
                         }
-                        disabled={!canResetPassword}
-                        className="rounded-lg border border-stone-300 bg-white px-2 py-1.5 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-200 disabled:opacity-50 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500/30"
-                        placeholder={
-                          canResetPassword ? "รหัสผ่านใหม่" : "OAuth — เขตเท่านั้น"
-                        }
+                        disabled={false}
+                        className="rounded-lg border border-stone-300 bg-white px-2 py-1.5 outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-200 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500/30"
+                        placeholder="รหัสผ่านใหม่"
                       />
                       <button
                         type="button"
-                        disabled={!canResetPassword}
                         onClick={() => handleResetPassword(user.username)}
                         className="rounded-lg border border-stone-300 bg-stone-100 px-3 py-1.5 text-stone-700 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
                       >

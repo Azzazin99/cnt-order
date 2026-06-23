@@ -86,12 +86,6 @@ export async function PATCH(req: Request, context: RouteContext) {
       if (body.password.length < 6) {
         return NextResponse.json({ error: "password อย่างน้อย 6 ตัว" }, { status: 400 });
       }
-      if (existing.authProvider !== "local" && !platform) {
-        return NextResponse.json(
-          { error: "ผู้ใช้ OAuth ให้รีเซ็ตผ่านแอดมินระดับเขตเท่านั้น" },
-          { status: 403 },
-        );
-      }
       updates.passwordHash = await hash(body.password, 10);
     }
 
@@ -116,7 +110,6 @@ export async function PATCH(req: Request, context: RouteContext) {
       role: updated.role,
       email: updated.email,
       schoolId: updated.schoolId,
-      authProvider: updated.authProvider,
     });
   } catch (error) {
     if (

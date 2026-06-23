@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "headroom-ai": "^0.22.4",
     "next": "16.2.4",
     "pg": "^8.20.0",
     "react": "19.2.4",

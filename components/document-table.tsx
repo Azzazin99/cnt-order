@@ -2,10 +2,19 @@
 
 import { useMemo, useState } from "react";
 
+import {
+  DOCUMENT_CATEGORIES,
+  type DocumentCategory,
+  getCategoryLabel,
+} from "@/lib/document-categories";
 import type { DocumentItem } from "@/lib/documents";
+import { formatOrderDateThai } from "@/lib/thai-date";
 
 export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
   const [query, setQuery] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState<"all" | DocumentCategory>(
+    "all",
+  );
   const [pageSize, setPageSize] = useState(5);
   const [page, setPage] = useState(1);
   const [preview, setPreview] = useState<{ url: string; title: string } | null>(
@@ -14,14 +23,17 @@ export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
 
   const filtered = useMemo(() => {
     const keyword = query.trim().toLowerCase();
-    if (!keyword) return rows;
-    return rows.filter((item) =>
-      [item.orderNo, item.title, item.department, item.orderDate]
+    return rows.filter((item) => {
+      if (categoryFilter !== "all" && item.category !== categoryFilter) {
+        return false;
+      }
+      if (!keyword) return true;
+      return [item.orderNo, item.title, getCategoryLabel(item.category), formatOrderDateThai(item.orderDate)]
         .join(" ")
         .toLowerCase()
-        .includes(keyword),
-    );
-  }, [query, rows]);
+        .includes(keyword);
+    });
+  }, [categoryFilter, query, rows]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(page, totalPages);
@@ -31,22 +43,44 @@ export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
   return (
     <>
       <section className="mb-4 flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3 text-sm shadow-sm dark:border-stone-800 dark:bg-stone-950/60 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2 text-stone-600 dark:text-stone-300">
-          <span className="font-medium">แสดง</span>
-          <select
-            className="rounded-lg border border-stone-300 bg-white px-2.5 py-1.5 outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:border-amber-500 dark:focus:ring-amber-500/30"
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-              setPage(1);
-            }}
-            aria-label="จำนวนแถวที่แสดง"
-          >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-          </select>
-          <span className="font-medium">แถว</span>
+        <div className="flex flex-wrap items-center gap-3 text-stone-600 dark:text-stone-300">
+          <div className="flex items-center gap-2">
+            <span className="font-medium">แสดง</span>
+            <select
+              className="rounded-lg border border-stone-300 bg-white px-2.5 py-1.5 outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:border-amber-500 dark:focus:ring-amber-500/30"
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+                setPage(1);
+              }}
+              aria-label="จำนวนแถวที่แสดง"
+            >
+              <option value={5}>5</option>
+              <option value={10}>10</option>
+              <option value={25}>25</option>
+            </select>
+            <span className="font-medium">แถว</span>
+          </div>
+
+          <label className="flex items-center gap-2">
+            <span className="font-medium">หมวดหมู่:</span>
+            <select
+              className="rounded-lg border border-stone-300 bg-white px-2.5 py-1.5 outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:border-amber-500 dark:focus:ring-amber-500/30"
+              value={categoryFilter}
+              onChange={(e) => {
+                setCategoryFilter(e.target.value as "all" | DocumentCategory);
+                setPage(1);
+              }}
+              aria-label="กรองตามหมวดหมู่"
+            >
+              <option value="all">ทั้งหมด</option>
+              {DOCUMENT_CATEGORIES.map((item) => (
+                <option key={item.slug} value={item.slug}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
 
         <label className="flex items-center gap-2">
@@ -54,7 +88,7 @@ export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
           <input
             type="text"
             className="w-full rounded-lg border border-stone-300 bg-white px-2.5 py-1.5 outline-none transition placeholder:text-stone-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-200 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500/30 md:w-64"
-            placeholder="เลขที่คำสั่ง / เรื่อง"
+            placeholder="เลขที่คำสั่ง / เรื่อง / หมวดหมู่"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -71,8 +105,8 @@ export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
               <th className="px-3 py-3 font-semibold">วันเวลา</th>
               <th className="px-3 py-3 font-semibold">เลขที่คำสั่ง</th>
               <th className="px-3 py-3 font-semibold">เรื่อง</th>
-              <th className="px-3 py-3 font-semibold">กลุ่มงาน</th>
-              <th className="px-3 py-3 font-semibold">วันที่ลงคำสั่ง</th>
+              <th className="px-3 py-3 font-semibold">หมวดหมู่</th>
+              <th className="px-3 py-3 font-semibold">สั่ง ณ วันที่</th>
               <th className="px-3 py-3 text-center font-semibold">ไฟล์คำสั่ง</th>
             </tr>
           </thead>
@@ -85,8 +119,8 @@ export function DocumentTable({ rows }: { rows: DocumentItem[] }) {
                 <td className="px-3 py-3">{row.issuedAt}</td>
                 <td className="px-3 py-3">{row.orderNo}</td>
                 <td className="px-3 py-3 leading-6">{row.title}</td>
-                <td className="px-3 py-3">{row.department}</td>
-                <td className="px-3 py-3">{row.orderDate}</td>
+                <td className="px-3 py-3">{getCategoryLabel(row.category)}</td>
+                <td className="px-3 py-3">{formatOrderDateThai(row.orderDate)}</td>
                 <td className="px-3 py-3 text-center">
                   {row.fileUrl !== "#" ? (
                     <button

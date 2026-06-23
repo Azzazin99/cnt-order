@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 
 import {
   getAdminDocumentListScope,
-  schoolIdForNewDocument,
+  resolveDocumentSchoolId,
 } from "@/lib/document-access";
 import {
   getCurrentAdminRole,
@@ -13,6 +13,9 @@ import {
 } from "@/lib/auth";
 import { writeAuditLog } from "@/lib/audit";
 import { addDocument, getDocuments, saveUploadedPdf } from "@/lib/documents";
+import { isDocumentCategory } from "@/lib/document-categories";
+import { assertPdfUpload, PDF_UPLOAD_ERROR } from "@/lib/pdf-upload";
+import { normalizeOrderDate } from "@/lib/thai-date";
 
 export const runtime = "nodejs";
 
@@ -37,32 +40,51 @@ export async function POST(req: Request) {
   }
   const actor = await getCurrentAdminUsername();
   const role = await getCurrentAdminRole();
-  const docSchoolId = await schoolIdForNewDocument();
 
   const contentType = req.headers.get("content-type") || "";
 
   if (contentType.includes("multipart/form-data")) {
     const formData = await req.formData();
+    const organization = String(formData.get("organization") || "");
+    const docSchoolId = await resolveDocumentSchoolId(organization);
+    if (docSchoolId && typeof docSchoolId === "object" && "error" in docSchoolId) {
+      return NextResponse.json({ error: docSchoolId.error }, { status: 400 });
+    }
+
     const orderNo = String(formData.get("orderNo") || "");
     const title = String(formData.get("title") || "");
-    const department = String(formData.get("department") || "");
-    const orderDate = String(formData.get("orderDate") || "");
+    const category = String(formData.get("category") || "");
+    const orderDateRaw = String(formData.get("orderDate") || "");
     const file = formData.get("file");
 
-    if (!orderNo || !title || !department || !orderDate) {
+    if (!orderNo || !title || !category || !orderDateRaw) {
       return NextResponse.json(
         { error: "กรอกข้อมูลให้ครบถ้วน" },
         { status: 400 },
       );
     }
 
+    if (!isDocumentCategory(category)) {
+      return NextResponse.json(
+        { error: "หมวดหมู่คำสั่งไม่ถูกต้อง" },
+        { status: 400 },
+      );
+    }
+
+    const orderDate = normalizeOrderDate(orderDateRaw);
+    if (!orderDate) {
+      return NextResponse.json(
+        { error: "รูปแบบวันที่ไม่ถูกต้อง" },
+        { status: 400 },
+      );
+    }
+
     let fileUrl = "#";
     if (file instanceof File && file.size > 0) {
-      if (file.type !== "application/pdf") {
-        return NextResponse.json(
-          { error: "รองรับเฉพาะไฟล์ PDF" },
-          { status: 400 },
-        );
+      try {
+        await assertPdfUpload(file);
+      } catch {
+        return NextResponse.json({ error: PDF_UPLOAD_ERROR }, { status: 400 });
       }
 
       const safeOrderNo = orderNo.replace(/[^a-zA-Z0-9ก-๙_-]/g, "-");
@@ -74,7 +96,7 @@ export async function POST(req: Request) {
     const item = await addDocument({
       orderNo,
       title,
-      department,
+      category,
       orderDate,
       fileUrl,
       schoolId: docSchoolId,
@@ -92,14 +114,35 @@ export async function POST(req: Request) {
   const body = (await req.json()) as {
     orderNo?: string;
     title?: string;
-    department?: string;
+    category?: string;
     orderDate?: string;
     fileUrl?: string;
+    organization?: string;
   };
 
-  if (!body.orderNo || !body.title || !body.department || !body.orderDate) {
+  const docSchoolId = await resolveDocumentSchoolId(body.organization);
+  if (docSchoolId && typeof docSchoolId === "object" && "error" in docSchoolId) {
+    return NextResponse.json({ error: docSchoolId.error }, { status: 400 });
+  }
+
+  if (!body.orderNo || !body.title || !body.category || !body.orderDate) {
     return NextResponse.json(
       { error: "กรอกข้อมูลให้ครบถ้วน" },
+      { status: 400 },
+    );
+  }
+
+  if (!isDocumentCategory(body.category)) {
+    return NextResponse.json(
+      { error: "หมวดหมู่คำสั่งไม่ถูกต้อง" },
+      { status: 400 },
+    );
+  }
+
+  const orderDate = normalizeOrderDate(body.orderDate);
+  if (!orderDate) {
+    return NextResponse.json(
+      { error: "รูปแบบวันที่ไม่ถูกต้อง" },
       { status: 400 },
     );
   }
@@ -107,8 +150,8 @@ export async function POST(req: Request) {
   const item = await addDocument({
     orderNo: body.orderNo,
     title: body.title,
-    department: body.department,
-    orderDate: body.orderDate,
+    category: body.category,
+    orderDate,
     fileUrl: body.fileUrl || "#",
     schoolId: docSchoolId,
   });

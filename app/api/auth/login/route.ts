@@ -1,20 +1,11 @@
 import { NextResponse } from "next/server";
 
-import {
-  applySessionCookies,
-  isLocalLoginEnabled,
-  validateAdminCredentials,
-} from "@/lib/auth";
+import { applySessionCookies, validateAdminCredentials } from "@/lib/auth";
 import { writeAuditLog } from "@/lib/audit";
 
-export async function POST(req: Request) {
-  if (!isLocalLoginEnabled()) {
-    return NextResponse.json(
-      { error: "การเข้าสู่ระบบด้วยรหัสผ่านถูกปิดใช้งาน กรุณาใช้ Google" },
-      { status: 403 },
-    );
-  }
+export const runtime = "nodejs";
 
+export async function POST(req: Request) {
   const body = (await req.json()) as { username?: string; password?: string };
   const username = body.username?.trim() || "";
   const password = body.password || "";

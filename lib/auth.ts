@@ -34,7 +34,8 @@ export async function validateAdminCredentials(
   username: string,
   password: string,
 ) {
-  const user = await findUserByUsername(username);
+  const normalizedUsername = username.trim().toLowerCase();
+  const user = await findUserByUsername(normalizedUsername);
   if (user) {
     if (!user.passwordHash) {
       return null;
@@ -53,8 +54,13 @@ export async function validateAdminCredentials(
     };
   }
 
-  const validUsername = username === getAdminUsername();
+  const validUsername =
+    normalizedUsername === getAdminUsername().trim().toLowerCase();
   if (!validUsername) {
+    return null;
+  }
+
+  if (!isLocalLoginEnabled()) {
     return null;
   }
 
@@ -62,13 +68,21 @@ export async function validateAdminCredentials(
   if (hash) {
     const ok = await compare(password, hash);
     return ok
-      ? { username, role: "admin" as UserRole, schoolId: null as string | null }
+      ? {
+          username: normalizedUsername,
+          role: "admin" as UserRole,
+          schoolId: null as string | null,
+        }
       : null;
   }
 
   const ok = password === getAdminPassword();
   return ok
-    ? { username, role: "admin" as UserRole, schoolId: null as string | null }
+    ? {
+        username: normalizedUsername,
+        role: "admin" as UserRole,
+        schoolId: null as string | null,
+      }
     : null;
 }
 
@@ -189,16 +203,4 @@ export function clearSessionCookies(
   response.cookies.set({ name: ADMIN_USER_COOKIE_NAME, value: "", ...base });
   response.cookies.set({ name: ADMIN_ROLE_COOKIE_NAME, value: "", ...base });
   response.cookies.set({ name: ADMIN_SCHOOL_COOKIE_NAME, value: "", ...base });
-}
-
-export function parsePlatformAdminEmails() {
-  const legacy = process.env.PLATFORM_GOOGLE_ADMIN_EMAILS || "";
-  const unified = process.env.PLATFORM_OAUTH_ADMIN_EMAILS || "";
-  const merged = `${legacy},${unified}`;
-  const set = new Set<string>();
-  for (const part of merged.split(",")) {
-    const e = part.trim().toLowerCase();
-    if (e) set.add(e);
-  }
-  return [...set];
 }

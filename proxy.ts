@@ -73,7 +73,7 @@ export default async function proxy(req: NextRequest) {
   const platformAdmin = await isPlatformAdminRequest(req);
 
   if (pathname.startsWith("/admin") && !loggedIn) {
-    return NextResponse.redirect(new URL("/login", req.url));
+    return NextResponse.redirect(new URL("/", req.url));
   }
 
   if (pathname.startsWith("/api/documents") && !loggedIn) {

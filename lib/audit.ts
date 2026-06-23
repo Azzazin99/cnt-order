@@ -10,6 +10,7 @@ export type AuditAction =
   | "LOGOUT"
   | "AUTH_LOGIN_GOOGLE"
   | "AUTH_LOGIN_MICROSOFT"
+  | "AUTH_LOGIN_LINE"
   | "AUTH_DENY_DOMAIN"
   | "AUTH_LINK_ACCOUNT";
 

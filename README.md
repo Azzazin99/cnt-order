@@ -29,15 +29,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Authentication (Google + Microsoft + multi-school)
+## Authentication (local login + multi-school)
 
-- Copy [`.env.example`](.env.example) and set `AUTH_SESSION_SECRET`, OAuth client IDs/secrets, and platform admin emails.
-- **Google:** `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`; optional `GOOGLE_REDIRECT_URI` (defaults to `{origin}/api/auth/google/callback`).
-- **Microsoft:** register an app in [Microsoft Entra admin center](https://entra.microsoft.com/) with **Supported account types** = *Accounts in any organizational directory and personal Microsoft accounts* (matches tenant `common`). Add **Web** redirect URIs, e.g. `http://localhost:3000/api/auth/microsoft/callback` and `https://<your-domain>/api/auth/microsoft/callback`. Set `MICROSOFT_CLIENT_ID`, `MICROSOFT_CLIENT_SECRET`; optional `MICROSOFT_REDIRECT_URI`.
-- **District admins:** `PLATFORM_GOOGLE_ADMIN_EMAILS` and/or `PLATFORM_OAUTH_ADMIN_EMAILS` (comma-separated, merged and deduped) — those addresses get `admin` with no school after OAuth sign-in.
-- In **Admin**, add schools and **verified email domains** so teachers can sign in with Google or Microsoft when their email domain matches.
-- After rollout, set `ENABLE_LOCAL_LOGIN=false` to disable password login.
-- SQL reference: [`migrations/20260426_google_auth.sql`](migrations/20260426_google_auth.sql), [`migrations/20260427_microsoft_oauth.sql`](migrations/20260427_microsoft_oauth.sql)
+- Set `AUTH_SESSION_SECRET` for signed session cookies.
+- All accounts sign in at `/` with username and password. The backend resolves role from the username — no account-type selector in the UI.
+- **Platform admin**: `ADMIN_USERNAME` and `ADMIN_PASSWORD` (or `ADMIN_PASSWORD_HASH` from bcrypt). Optional `ENABLE_LOCAL_LOGIN=false` disables password login.
+- **School accounts**: username and password are the school's 8-digit SMIS code (provisioned when schools are imported or added in Admin).
+- Legacy URLs `/login` and `/login/platform` redirect to `/`.
+- Import schools from `_สพป.ชัยนาท.xlsx`: `npx tsx --env-file=.env.local scripts/import-schools-xlsx.ts`
 
 ## Deploy on Vercel
 

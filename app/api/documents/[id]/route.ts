@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import {
   assertCanAccessDocument,
   getAdminDocumentListScope,
+  resolveDocumentSchoolId,
 } from "@/lib/document-access";
 import {
   getCurrentAdminRole,
@@ -20,6 +21,9 @@ import {
   saveUploadedPdf,
   updateDocument,
 } from "@/lib/documents";
+import { isDocumentCategory } from "@/lib/document-categories";
+import { assertPdfUpload, PDF_UPLOAD_ERROR } from "@/lib/pdf-upload";
+import { normalizeOrderDate } from "@/lib/thai-date";
 
 export const runtime = "nodejs";
 
@@ -88,20 +92,37 @@ export async function PUT(req: Request, context: RouteContext) {
   }
 
   const formData = await req.formData();
+  const organization = String(formData.get("organization") || "");
+  const docSchoolId = await resolveDocumentSchoolId(organization);
+  if (docSchoolId && typeof docSchoolId === "object" && "error" in docSchoolId) {
+    return NextResponse.json({ error: docSchoolId.error }, { status: 400 });
+  }
+
   const orderNo = String(formData.get("orderNo") || "");
   const title = String(formData.get("title") || "");
-  const department = String(formData.get("department") || "");
-  const orderDate = String(formData.get("orderDate") || "");
+  const category = String(formData.get("category") || "");
+  const orderDateRaw = String(formData.get("orderDate") || "");
   const file = formData.get("file");
 
-  if (!orderNo || !title || !department || !orderDate) {
+  if (!orderNo || !title || !category || !orderDateRaw) {
     return NextResponse.json({ error: "กรอกข้อมูลให้ครบถ้วน" }, { status: 400 });
+  }
+
+  if (!isDocumentCategory(category)) {
+    return NextResponse.json({ error: "หมวดหมู่คำสั่งไม่ถูกต้อง" }, { status: 400 });
+  }
+
+  const orderDate = normalizeOrderDate(orderDateRaw);
+  if (!orderDate) {
+    return NextResponse.json({ error: "รูปแบบวันที่ไม่ถูกต้อง" }, { status: 400 });
   }
 
   let fileUrl = existing.fileUrl;
   if (file instanceof File && file.size > 0) {
-    if (file.type !== "application/pdf") {
-      return NextResponse.json({ error: "รองรับเฉพาะไฟล์ PDF" }, { status: 400 });
+    try {
+      await assertPdfUpload(file);
+    } catch {
+      return NextResponse.json({ error: PDF_UPLOAD_ERROR }, { status: 400 });
     }
 
     const safeOrderNo = orderNo.replace(/[^a-zA-Z0-9ก-๙_-]/g, "-");
@@ -116,9 +137,10 @@ export async function PUT(req: Request, context: RouteContext) {
   const updated = await updateDocument(id, {
     orderNo,
     title,
-    department,
+    category,
     orderDate,
     fileUrl,
+    schoolId: docSchoolId,
   });
   if (!updated) {
     return NextResponse.json({ error: "ไม่พบเอกสาร" }, { status: 404 });

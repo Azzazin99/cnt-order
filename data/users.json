@@ -1,12 +1,1562 @@
 [
   {
-    "username": "admin",
-    "passwordHash": "$2b$10$0kZhQyR6j14UF8xM/Tu5b.VP52B/IKuPqpGaDCy1K295SnKDxdA.e",
-    "role": "admin"
+    "username": "18010004",
+    "passwordHash": "$2b$10$Pp0YH5IfVIBSQ/K9B0xez.Ggw1s.WLY4vwa/Zlbf9ZwwO6r.9p/PC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "2c03d718-a27d-41e0-8ae1-c453a872d830",
+    "status": "active"
   },
   {
-    "username": "editor",
-    "passwordHash": "$2b$10$EYfZMWfqU4zDIbqijriDruHnvLpf.KOxjhIMH/oNikUjvyu2DzkIy",
-    "role": "editor"
+    "username": "18010005",
+    "passwordHash": "$2b$10$JgNvWgOP9WaOo5ibtiObb.tpOs83QBfFTw8wM1VT2yKgNUvKT4iyS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e68563c9-3566-496c-92c5-d614b71dd51f",
+    "status": "active"
+  },
+  {
+    "username": "18010006",
+    "passwordHash": "$2b$10$.mKkMpkPIQ.xNnzXUMQEIe4ZTPoRlJU8A3fBJiXMzZ.7DQ7NQSkou",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "dab035a1-e172-4bf8-8581-b18b8439b232",
+    "status": "active"
+  },
+  {
+    "username": "18010008",
+    "passwordHash": "$2b$10$G3Dzcqjndn0nNyGm9QS0YufYchtvEDIGZbF6fFLMif5dGh7/gmhpa",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "963e5d66-ecbe-44e4-8da4-9afd24fbd84c",
+    "status": "active"
+  },
+  {
+    "username": "18010012",
+    "passwordHash": "$2b$10$wy14ah2QNuJfx7VFfiPfgO1QdD8tozOSSToFl9YaHrrvlfeliM16u",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "38e1676e-7580-4549-9153-e4420893fda7",
+    "status": "active"
+  },
+  {
+    "username": "18010013",
+    "passwordHash": "$2b$10$pxUcaNekafv.ybjh2K7W.ef/R9H/V4T7qvrb9YgYNWf6qWLhJVBpa",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b547b151-37e9-4482-b5f7-708b2b2e5e57",
+    "status": "active"
+  },
+  {
+    "username": "18010015",
+    "passwordHash": "$2b$10$Z2Ktgw0HaownnsIunVn3FefHhD9S6bkJmYs6A6zDCaeJSZt5U0mim",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4a71e574-9c64-41f8-add3-e6f939a914f0",
+    "status": "active"
+  },
+  {
+    "username": "18010016",
+    "passwordHash": "$2b$10$1gVO5xk66O9P96zDOW94hOw7mHUiitxt3HTKseHE1namlYYEK6tx2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b7708f21-a861-44ae-b7e8-b193a715a284",
+    "status": "active"
+  },
+  {
+    "username": "18010017",
+    "passwordHash": "$2b$10$GGRoP4fzxJZ7Tfz8zi2RIOEf/LrHe6pGh/rBVAgCKv/woSEv.0oNq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "7f045bef-4e05-468a-abb0-f8bdded0f310",
+    "status": "active"
+  },
+  {
+    "username": "18010018",
+    "passwordHash": "$2b$10$ItVPqxLhz6UWAX99tt6RFejI9cwKuZYGMfAfkJA7OKLCmSsoOrVVa",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a5e72c21-310c-4d0c-8bcb-acdf8e807991",
+    "status": "active"
+  },
+  {
+    "username": "18010019",
+    "passwordHash": "$2b$10$1VrPfygMHKWKMKs.K4XXCuk8ZHz2Pm/DibCpCeY13/RKdiKjnfK1G",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "436699be-888d-4b90-940b-2e387e226d5a",
+    "status": "active"
+  },
+  {
+    "username": "18010021",
+    "passwordHash": "$2b$10$rAhUSr/PMVROSt9ojvlmwuIYxUXwsjErs80bv2byzOmxWEXP4G.2y",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ded1b14a-47bb-488e-a591-1a5b3690227a",
+    "status": "active"
+  },
+  {
+    "username": "18010022",
+    "passwordHash": "$2b$10$XwdG2jYXFwwmZCa9uRI0HOdfgcrJkEsDuKyLXGsmPodXRVW4kC3.i",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "efed8da0-ff40-4405-a567-c43dce0f9e67",
+    "status": "active"
+  },
+  {
+    "username": "18010023",
+    "passwordHash": "$2b$10$49uezNjVFoKZa6afRIGG8unUs0kaHUdINvfJopy.HftCjom5Sa2/i",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "41dd99b4-edc9-40ee-bf8b-05efbfa437ad",
+    "status": "active"
+  },
+  {
+    "username": "18010024",
+    "passwordHash": "$2b$10$3fpxXb/YwynseuXXJGO6puOI7IWb3o6mf47CvhSzyyeQs4NhUX94y",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c802bfdb-ee8d-47be-941c-c22540821422",
+    "status": "active"
+  },
+  {
+    "username": "18010025",
+    "passwordHash": "$2b$10$kRzyqwSq8kkYOZfw/LK2I.kRZT4G..1V0W0lSAnRdv.4SDXWO4pLK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c432a13a-b5ba-46ae-8284-3971ab1df839",
+    "status": "active"
+  },
+  {
+    "username": "18010027",
+    "passwordHash": "$2b$10$sZDLfKaHOLRxmW7dkZJt6./yhB27uOvTkp51DYFa7YQYogen4W1ni",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "141d5c5e-2e09-44ef-82ec-76f92625be9c",
+    "status": "active"
+  },
+  {
+    "username": "18010028",
+    "passwordHash": "$2b$10$XcsXL/OMZazgoIvzUciv5ehYiDnGbf4b9CYua9HHrDfUb0BWFXK3C",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b6e0c08f-eb79-4ea7-9910-1185818dcd08",
+    "status": "active"
+  },
+  {
+    "username": "18010029",
+    "passwordHash": "$2b$10$.3BbQFTwPMzQKtnq9ef39OSwAlgbE/V730svwpmO4sV.Ck2kucXIe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "90ace285-8fd6-432e-a283-4f6bd98367c7",
+    "status": "active"
+  },
+  {
+    "username": "18010030",
+    "passwordHash": "$2b$10$dncwt4Kilgg27YOhQzJtauvLZQxdzi9BqcRL9E3j0KgxuP543rUvu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b6a5dbfa-258e-4852-9f89-d0fc9b26e48e",
+    "status": "active"
+  },
+  {
+    "username": "18010031",
+    "passwordHash": "$2b$10$q5ssEQgIfEs4qJqfqs7y2uuxhsdbpSphIkP8Up.zXPj7n./HUZ3EG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a4f5d845-d09f-401c-a0be-3353dcc11ff0",
+    "status": "active"
+  },
+  {
+    "username": "18010034",
+    "passwordHash": "$2b$10$JFtrdfjdKr9/N6xkRgX6Te1VMSOvrnKZtI7bBeJWjC7fKumSNY.cu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "d955626e-87c1-4b67-b2a6-c03f5a0b020f",
+    "status": "active"
+  },
+  {
+    "username": "18010035",
+    "passwordHash": "$2b$10$y3Rmf/msXYTt64VnCPh5j.Ylw7HLL4loCgYzpc2JvqWEvMNWdiPRS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f7829bbf-794d-45b9-be1a-977e729dc022",
+    "status": "active"
+  },
+  {
+    "username": "18010038",
+    "passwordHash": "$2b$10$T7l8vnAIiI5SeFvesaL8dOZw0WZuWE.HnVssfa6Fpg1w5cksGcyvi",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "6b9311e7-31a5-45f3-b92f-d2c2f5c8cd99",
+    "status": "active"
+  },
+  {
+    "username": "18010039",
+    "passwordHash": "$2b$10$UaH63cGGP68l/YuYGu2zr.TxEYKk1iNTkOA4JR8pP.yjXg43bWjya",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ef25c0e1-f9b6-45dc-b8ed-136df5141a12",
+    "status": "active"
+  },
+  {
+    "username": "18010040",
+    "passwordHash": "$2b$10$bLpFHxQumScRmtHYPtUd3eqG.nkqVYYHH5KcEI/f/fiQLEw6GTwg2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "20c80f76-a313-4f37-962d-572b0f440618",
+    "status": "active"
+  },
+  {
+    "username": "18010043",
+    "passwordHash": "$2b$10$ZmLLjQltMcIKlDekKIWmVul3sO0V8HmyngnkyJ8vMFCMyhjQWfmXu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "8a0e8529-9d75-45ea-a956-0c44149344c4",
+    "status": "active"
+  },
+  {
+    "username": "18010045",
+    "passwordHash": "$2b$10$21AAqpWWORxlRfaiyDQ/peapW5oG8HoElsxhwEkiQampyhHXMlsfa",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "163724b7-5a65-4670-b75d-aee55b85d8ec",
+    "status": "active"
+  },
+  {
+    "username": "18010047",
+    "passwordHash": "$2b$10$35xkeWlPyC/QHH0TCrI8FeI8fD7ZHF9V7iC0FPJOoGVrwyxqRabjS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "850684c0-d6e3-4cdf-91e9-16a536959cba",
+    "status": "active"
+  },
+  {
+    "username": "18010049",
+    "passwordHash": "$2b$10$X4RvVg1PQLSAKfUvfq.dn.zkryo378phBpi63h2zvyjDgJp1VA1UC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "486f4d07-5e89-4304-9d1b-7e5e4e01648d",
+    "status": "active"
+  },
+  {
+    "username": "18010052",
+    "passwordHash": "$2b$10$FLtuhvKq/ARseSFyNOJGF.XygCedkshJtYVeBXWLMvWN9ua3/mQqC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a8e436da-5ba5-4655-87d6-ca42ffb18062",
+    "status": "active"
+  },
+  {
+    "username": "18010053",
+    "passwordHash": "$2b$10$ltcqH0Ttde07qkv6oNOIzeJr62uVDRqsuviecR4XXxmLGqSGn6Jli",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "2684e6f8-8544-4f81-bd9a-1362c36afc58",
+    "status": "active"
+  },
+  {
+    "username": "18010056",
+    "passwordHash": "$2b$10$ztp..Kmcw2thyRpCkEA9BOylNoy3dJUX2ox5sZcKjLShQxcSd9RJi",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "af109a3a-c1d4-4ddd-a455-5accda104f86",
+    "status": "active"
+  },
+  {
+    "username": "18010058",
+    "passwordHash": "$2b$10$ENAjHah7kghIH/9CgNnPT.r7qbnpklcd6gmHXjdkww/OY1qz4YwyW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "21593a4b-16e0-4481-9377-2f5a7d819750",
+    "status": "active"
+  },
+  {
+    "username": "18010061",
+    "passwordHash": "$2b$10$b7s8e50Kuojd46tlh.29bei0aav.LahlgBEWm/RrfwnctP3LsQktu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "42e68f89-06b8-4adb-880f-0fcaa44524eb",
+    "status": "active"
+  },
+  {
+    "username": "18010063",
+    "passwordHash": "$2b$10$6TMziwE3mwu0xLHr1e7nhOXOROSOXxJ6bfRUbMcZOhSSreyx/sAT2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "78f099ba-a9c1-46bb-9c24-7418bc329b59",
+    "status": "active"
+  },
+  {
+    "username": "18010065",
+    "passwordHash": "$2b$10$R7AIZe2kwJ.N8tHS7RBjw.ZjVHgJ5YCM1P8Cng3eti1QUAVpEuPEG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "90a82b12-0e53-4a5b-a48a-37a917f40b93",
+    "status": "active"
+  },
+  {
+    "username": "18010067",
+    "passwordHash": "$2b$10$YixmSYW0P4JhWtTeTmurdevwXbqYAzcrmLP2ZP4JADtalBWLji/KC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "00a51c9b-3b96-4d1c-bd54-f3098ff26a5b",
+    "status": "active"
+  },
+  {
+    "username": "18010068",
+    "passwordHash": "$2b$10$7/MebvqgajbmWXVP5BXuWe9HjrhoKcsnSz3NOs9qmLGFoo/gP3.0.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "75b47de9-075a-4e35-a859-de1e15b5ea08",
+    "status": "active"
+  },
+  {
+    "username": "18010069",
+    "passwordHash": "$2b$10$ROAv0wxl/HnftBKk3zGO.OIElIXbmJuoiXguoqrbBjKCTJ7kR60hG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "934c821d-901f-4192-a3bb-4dbcd196f4cd",
+    "status": "active"
+  },
+  {
+    "username": "18010071",
+    "passwordHash": "$2b$10$aJU03b4ALii4WH.hN5FtO.gqIF7w755FDnpd/ioB2CAAaKZbrYnNi",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4edbcce0-5233-4c71-88ec-b227dfa93cee",
+    "status": "active"
+  },
+  {
+    "username": "18010074",
+    "passwordHash": "$2b$10$cDc55he/oH7eSsh7QbXQtOFy.VzHY5CBzHKHY9oDU3LJHFv5ZOIqm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "7a45c56a-3630-45f4-82b4-5a3f5c8297f6",
+    "status": "active"
+  },
+  {
+    "username": "18010075",
+    "passwordHash": "$2b$10$jYWHoM50.cji6TsBa9C3Cu1pghW2zbIkIG5HfWrGU/2bnfk7g7K9q",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ce5afd34-2869-49ee-b871-7c8a47a865e2",
+    "status": "active"
+  },
+  {
+    "username": "18010076",
+    "passwordHash": "$2b$10$9EB9XI/ibvkfXiaxCBM6jeU5x8APaVXMo5MIub8q/JSc/HlhNOtWe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "60b1e217-c105-4bdc-b126-b89fe092bf97",
+    "status": "active"
+  },
+  {
+    "username": "18010078",
+    "passwordHash": "$2b$10$xi4DrTNQrEZdZO3qrc2leOsTPtIlPEZLlPh8iXJ24JVafNuBLSkHK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "985df22e-a384-4489-b96d-cbbcace9eab0",
+    "status": "active"
+  },
+  {
+    "username": "18010079",
+    "passwordHash": "$2b$10$mkRODp6KF9pZPlGbgwkYauCXmuE/sz56zfkJow55KkB4oFzpiKI1m",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "10f28ff5-cee0-43bc-94d6-f7530cbdfd0a",
+    "status": "active"
+  },
+  {
+    "username": "18010081",
+    "passwordHash": "$2b$10$wPCO5.dwnGBqNGYX0Np3JuVPCyfcQ5B5k1ztB4qrvZDiwPlaDb.by",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4877d745-27d4-4bcb-adac-6aeab06f93e7",
+    "status": "active"
+  },
+  {
+    "username": "18010082",
+    "passwordHash": "$2b$10$M7HkwWWaMvxMb2.eZNDp6uuRYLGYuKCyxj3WjfN2Dr0QJ0.bdLAVy",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "13cc9632-b95b-4f9c-8f1d-3c2ebe816dc4",
+    "status": "active"
+  },
+  {
+    "username": "18010083",
+    "passwordHash": "$2b$10$vZ2rr6GspFJXmEoez7Z.ce36hR2l6q7kGrerHhjRSbIRliSB.Casq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "5ab0b688-c97e-4e9e-af9f-732ac291cb3a",
+    "status": "active"
+  },
+  {
+    "username": "18010084",
+    "passwordHash": "$2b$10$Kki5cg1Jytloy.pKVrYAeuP1XNyb3ezc4a4uxU9TfE9vwXKgzNH2.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "cc6d324b-7088-4ee6-9a53-693e5768d94f",
+    "status": "active"
+  },
+  {
+    "username": "18010085",
+    "passwordHash": "$2b$10$qIjuwuKP3OahhCCYOBevgO.OmiBohayy.wIT0GT3NR6mveNgM/EOC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "abcd1878-ad11-4795-b0f2-1308ff7fe01f",
+    "status": "active"
+  },
+  {
+    "username": "18010087",
+    "passwordHash": "$2b$10$aTUClHVoINJ//3Gg.tJH4udJ02sSmgdqqJVy02B7d.l3tGZL3QAIu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "cc2b2b84-2321-4b26-b2af-b604a0881bef",
+    "status": "active"
+  },
+  {
+    "username": "18010088",
+    "passwordHash": "$2b$10$KCgnnSO2as2avLAhfYU00O.ElmoQfRSJryMe.tjA/fM6nqENU6b3e",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a182aac2-e0d3-4651-b7ec-ba2ed3ed60a7",
+    "status": "active"
+  },
+  {
+    "username": "18010090",
+    "passwordHash": "$2b$10$IyUf7wXKw6nhxMiZsWvBvuqIf9ryVOf832JD6DxDvvBF438oazu6G",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "51a86ed4-fdd8-4648-bb49-ce7b906b8cbe",
+    "status": "active"
+  },
+  {
+    "username": "18010091",
+    "passwordHash": "$2b$10$gLJUfj06QMY8vuVIaDTGHO0U4bgwpbvbRN.mYhROr5PVYCw9nPjSe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "dcc1faeb-a35c-418d-b2aa-998dbc94ed0c",
+    "status": "active"
+  },
+  {
+    "username": "18010092",
+    "passwordHash": "$2b$10$8YUOE7Z2UrdO.7j8fzpiB.0ISrOJpSEeEvPbR4lDpIuZ1U7MRsos6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "8fb7bea1-afaf-4e82-a449-7a50c3c95271",
+    "status": "active"
+  },
+  {
+    "username": "18010093",
+    "passwordHash": "$2b$10$l1zRiFqrhqp.HvalgeO0EuMrSpW4/tbQIxC/e2YCfxac7U.fVY9C.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "7e7baa6d-83f4-4786-bedd-df249bd20a70",
+    "status": "active"
+  },
+  {
+    "username": "18010095",
+    "passwordHash": "$2b$10$SMAGZuRGJXu5TR6/ZRWLB.27wki44Bwc066i/BAwCqftyZhIGe7/m",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b7955047-0d97-415a-90cb-96d1daa615ba",
+    "status": "active"
+  },
+  {
+    "username": "18010097",
+    "passwordHash": "$2b$10$.CT2jKKAWAlFvHu1nHKghO2MlfEbXsSFGdn1R4OtbT3XXpxBgfRwS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c8f5ebe6-3e7c-4d49-b2e1-37b59281b22a",
+    "status": "active"
+  },
+  {
+    "username": "18010098",
+    "passwordHash": "$2b$10$G75x9tDztxWGisyxKwBYE.WL8HfJQZ18kzBfx.gDvffkxIHVw3h0a",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "06eaa591-fd82-4a96-ad27-37ef30d44e83",
+    "status": "active"
+  },
+  {
+    "username": "18010099",
+    "passwordHash": "$2b$10$4q2EnXDufBL.H7.roTnOmut7C8KL/z9ChBZa7AyeMffOQRtHFalKK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b3f61f32-1cec-43c7-8aca-1a66d56fbd1f",
+    "status": "active"
+  },
+  {
+    "username": "18010102",
+    "passwordHash": "$2b$10$D.vyAVyjYMT09ERye56J.OQ9.reT9UWcyS5eKKlTe6/yAmf1uUSW6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "3597afdc-6d76-4d7d-91d6-fdbcff002dbe",
+    "status": "active"
+  },
+  {
+    "username": "18010103",
+    "passwordHash": "$2b$10$2N6VINgIpHTXwpW4JBRh7O11bQAZBpWWw3iitZs41Znt6qswjnSvq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "fad8b6db-eb4b-4214-9e28-ecae41348332",
+    "status": "active"
+  },
+  {
+    "username": "18010104",
+    "passwordHash": "$2b$10$sOM9vzXyHTdpo6jqJaFjsuSRwuxF5REvr0DPeSnV0hd/Sd.G99kPO",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "5cad5abc-b0da-4221-b79f-44db5f7ae178",
+    "status": "active"
+  },
+  {
+    "username": "18010105",
+    "passwordHash": "$2b$10$fomMTLu0ylFkgCZ.IgjyzO5exIz0ijc4NZVbbrcdHh3GFiolRPMge",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "810cab13-ddf3-4d2b-a2da-8850d42da3ab",
+    "status": "active"
+  },
+  {
+    "username": "18010106",
+    "passwordHash": "$2b$10$hpPWGqfPrJGW1Dq3b7dm2utC0K6T3GS9N1IbRYsRmKgK0zeVBoUjW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "bd8cf396-4c76-40ec-ac46-df0288798fe6",
+    "status": "active"
+  },
+  {
+    "username": "18010107",
+    "passwordHash": "$2b$10$Cf51PZvKZe9VcnbPyx7hB.Ab2T/HbKm3Jltw6HcgFT0n4UMK.z5d.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "28cbdf66-6e13-4c85-b3af-076e3c0b452a",
+    "status": "active"
+  },
+  {
+    "username": "18010108",
+    "passwordHash": "$2b$10$isO4uHr8lWxEg6NQ8jt1juuN3oC9xLqAU6QFTI1naVfpMNUJ3JPbq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "6cfe11bd-0871-49f3-898f-08d76ac29c51",
+    "status": "active"
+  },
+  {
+    "username": "18010110",
+    "passwordHash": "$2b$10$OeQ6SY4sXDCWPxVZ1Acw6eVZ/fyZkIHNIXONH5uxrBIWIEm8IvDVS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "654d73d7-001b-4320-9842-6508994061a5",
+    "status": "active"
+  },
+  {
+    "username": "18010111",
+    "passwordHash": "$2b$10$yKeqWOKVPCXurNP6cVRFF.o/UnPvupRnc5rYTclY6ZYAGxhfHTs9C",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e7fa7e9e-045f-4111-a855-cc80afb1243c",
+    "status": "active"
+  },
+  {
+    "username": "18010112",
+    "passwordHash": "$2b$10$Xx6SjYDpngqMUWqNmE5TfujgcqqszWZ6VdYbuuU0Mnm6vhaoWYOAK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a09badb4-883c-46e1-88b9-a1ac801f6277",
+    "status": "active"
+  },
+  {
+    "username": "18010113",
+    "passwordHash": "$2b$10$jv4XYInq6Lx3KAPkGPTkbuCB3ZgY/VskC1BzyWTni4ympjdGi.3KS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "fff42920-501e-4023-8452-0ff6f2b4b24b",
+    "status": "active"
+  },
+  {
+    "username": "18010114",
+    "passwordHash": "$2b$10$2WORSqfHi1xFa8WYsD0GiOT1B1i0qNm.n51IyGHeNOAO4/pTZjgOW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "da71d383-08bc-4b69-b30f-64227f35495a",
+    "status": "active"
+  },
+  {
+    "username": "18010115",
+    "passwordHash": "$2b$10$72o5Akuqq6NyQiIvFjHhPOSG16X2f7RW15ftWO1LUkUz/.NtDoFT.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4156898d-a71f-45f0-86d2-5febbfe71f1a",
+    "status": "active"
+  },
+  {
+    "username": "18010116",
+    "passwordHash": "$2b$10$HPHDc8G23ezFBhnz80MaMuM3XQ7aWwmz3HkKvV9we9wd3ogfNExCK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f569ec4e-91e1-4e03-84d0-53b66a97ed4f",
+    "status": "active"
+  },
+  {
+    "username": "18010117",
+    "passwordHash": "$2b$10$uS1h9yeUEVTze7/1NtCOZuH3QzGYxI/WFj7G1bi/bOQERLO2bVtEW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ef32bed5-9818-45a1-9969-1ef284cf5d52",
+    "status": "active"
+  },
+  {
+    "username": "18010118",
+    "passwordHash": "$2b$10$oOvRTZfNaufTk1fG7YtnwO/RKOiil9XkBANeS/nr2Ar7CUe07fB46",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ffa09e53-4c6a-4a43-9dfb-3839c6407ba5",
+    "status": "active"
+  },
+  {
+    "username": "18010119",
+    "passwordHash": "$2b$10$jjYVfqV8SvhicK8MtFs1zeIKvRqkE.oGzePY10trn155mhrnmfeKm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "8bd5c4fb-c4e1-45e0-a465-6bfbb32684e9",
+    "status": "active"
+  },
+  {
+    "username": "18010120",
+    "passwordHash": "$2b$10$pSMmHcE0jKKbzGNSulb5R./ztBDsal7RN8qCICmPnQMgjb7AlVmEG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "45c48389-a5d2-4089-9aa3-88a66397e437",
+    "status": "active"
+  },
+  {
+    "username": "18010121",
+    "passwordHash": "$2b$10$ElPkq0RcqQEKlEjm76aTkOmyH8PY8vj78hFxViKPbLIC1McPaO/7e",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "0c96ed23-bd48-47b8-a544-f028001d84f9",
+    "status": "active"
+  },
+  {
+    "username": "18010122",
+    "passwordHash": "$2b$10$7e7MSUDu3E727oe4./pi7.6Gi4jqbmm9YPwmkVsZdfZKp2507bCrq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "98058948-8412-4828-8547-d42389587336",
+    "status": "active"
+  },
+  {
+    "username": "18010123",
+    "passwordHash": "$2b$10$PgK7sKtSAn9/MosnhUCUhOghTadUdqniLqNu0lIiqDVuhaaunJW.i",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "bfc6f267-7251-48ae-9b05-7b158663e938",
+    "status": "active"
+  },
+  {
+    "username": "18010124",
+    "passwordHash": "$2b$10$TXvOT.1WnCkZb8vtzLkSduKMf70xCg8G3GhknEwygtoBhaEokIiPG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "3b4292d7-3455-46d5-a1b3-6fa51baa28e3",
+    "status": "active"
+  },
+  {
+    "username": "18010125",
+    "passwordHash": "$2b$10$cQO49bYeK8GtmjXzhckh4eo6tv9m1uWFQipJFo.vcKIFvMByINh0q",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "cfec0a0e-96eb-469d-b607-4dc450dfcd6e",
+    "status": "active"
+  },
+  {
+    "username": "18010126",
+    "passwordHash": "$2b$10$8/NNdGPaz36X69VOVoEyPevv.m2Ydb1Zk84kzkOy03AcA4JhIqJE.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "56dc8ae0-27d5-44d7-bb98-a180626bd273",
+    "status": "active"
+  },
+  {
+    "username": "18010127",
+    "passwordHash": "$2b$10$YbSlTFIjNbx6oLA6lWlVleyQBKpTv1IYYVvHkvTiEyPPRDdqtQ1zu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "dec296b2-078c-45c3-b24b-20cd7ea591bc",
+    "status": "active"
+  },
+  {
+    "username": "18010128",
+    "passwordHash": "$2b$10$k9rlUwGIOWH0gmluQRzR9.klYgmrCN5IORLAM3f6stxGQDaUcyO4C",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c719d613-fef0-48dd-a294-49838b151b81",
+    "status": "active"
+  },
+  {
+    "username": "18010130",
+    "passwordHash": "$2b$10$OYQp1tQYTpAOv.PIgvOaNOZWZtkCJYAOTowT8gpX9PIvAN36cy/vS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a76ed5de-1a4c-4b2c-ba70-625c9a44506b",
+    "status": "active"
+  },
+  {
+    "username": "18010131",
+    "passwordHash": "$2b$10$xtZFHMBwe5fVzUmKxwj2MO/1B9PpMTVFV0kd/SdzNV8LGjBknyaMO",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f8f0c74e-19ea-44d9-ba78-e09cf1353533",
+    "status": "active"
+  },
+  {
+    "username": "18010132",
+    "passwordHash": "$2b$10$v0TOtKg8GH2NlJ7rdPb1y.ZqPPo0DcuYjsWyGc08ID9wVmLovKiEC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "edac2d26-4fff-4c97-abe3-1a35bc8180be",
+    "status": "active"
+  },
+  {
+    "username": "18010133",
+    "passwordHash": "$2b$10$sJ71ITe8XawOhlAxVHkdlunvYv3cy0zLIJtqODMGGOu9wqfwG1/Ou",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "5295d4ce-a0e9-4edf-8dda-e5b6af91bc99",
+    "status": "active"
+  },
+  {
+    "username": "18010134",
+    "passwordHash": "$2b$10$MnxWuJIZGqTajrBjF2IlHuT4DcxtcJ7Pgc58XZbCsY5QsHZVULtU.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b397e244-47dd-4499-912b-a46b2a22a1b2",
+    "status": "active"
+  },
+  {
+    "username": "18010135",
+    "passwordHash": "$2b$10$rU6yPv3HZeeVC81UPl6qtODChgBUdVB429V6FXmuZbsoYopPXXch6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "aa2cb587-651d-47e8-9710-494feb1a8682",
+    "status": "active"
+  },
+  {
+    "username": "18010137",
+    "passwordHash": "$2b$10$zqBMpPxfBhW51b6CzU3hA.nZ8Q1fxK5OYsIwWAALYukMbS59CFJJe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f877487a-f2a6-441c-98cd-b473f9bbac8a",
+    "status": "active"
+  },
+  {
+    "username": "18010138",
+    "passwordHash": "$2b$10$mYnmimTZbTxKRB8oTdFBP.b2NvopTJwZZK1rkrn4fVeCJj2gB4GyO",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "0300e825-06d5-46be-ae55-b9fd6e52fbe8",
+    "status": "active"
+  },
+  {
+    "username": "18010139",
+    "passwordHash": "$2b$10$U7BZ9a1WuvH3UksdBrBKRu7RwSKQjmn6F.1xv5CVfX9t88ghZURl2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "3b97c342-b584-4f0f-b699-36f1be3d7905",
+    "status": "active"
+  },
+  {
+    "username": "18010140",
+    "passwordHash": "$2b$10$lF93aSDmNVHHZvgZxKPN/.Jwb0TRhMylVATkNyj7AyTDUcFWhOx.S",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "cd741929-a766-44cf-9aa8-0b85b267da4e",
+    "status": "active"
+  },
+  {
+    "username": "18010141",
+    "passwordHash": "$2b$10$HOlSiCz9a16rLOiQWb280uGCOH9jwa6ygZM0ONwQvt0QAJeSB.3je",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e3586e4e-c564-48e2-8eb8-de66deb4b35c",
+    "status": "active"
+  },
+  {
+    "username": "18010142",
+    "passwordHash": "$2b$10$O6onshggyW6s2E5/MdS5fecYvBKgD5KQoFh2xfNAIlnL7K9w6WOTi",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "d87a3be9-0dc5-422c-9e5f-96a18e2fdf83",
+    "status": "active"
+  },
+  {
+    "username": "18010143",
+    "passwordHash": "$2b$10$nLl/as2wz4nRZpcXZBrIouLLyHsSryJAtZdK0CU9utBWa57om3hKi",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "83ac492c-8746-4924-8a58-80ce0572cd6a",
+    "status": "active"
+  },
+  {
+    "username": "18010144",
+    "passwordHash": "$2b$10$pH7Euwy9cA3BrVkNU4CjfeCRFHMywsGNJyd3.JXDyXwsaKSMjm5YS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "00dc835f-3049-4521-9952-b62930d92647",
+    "status": "active"
+  },
+  {
+    "username": "18010145",
+    "passwordHash": "$2b$10$4gJo.KAPPromrN7yIv3pVeU2EMSKq84CbU46UCtOY371XlwHoyulS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f24bee4d-a521-4e31-b4f5-b2471c2c8c1d",
+    "status": "active"
+  },
+  {
+    "username": "18010146",
+    "passwordHash": "$2b$10$lM7OChg1iygDyERmEtc2quju1z9hn6NvNIZ6CUCQwAb5mvZ2Qzg4i",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "24629f69-2f30-4915-967b-7c0e4adc0fb8",
+    "status": "active"
+  },
+  {
+    "username": "18010147",
+    "passwordHash": "$2b$10$rCGNjV5ftbGoTxwphLDOKOQKDPa1x97YAHfZvyyirLc2cGGwKs4ui",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "495afbe8-08ed-4d28-b03c-601f61d14374",
+    "status": "active"
+  },
+  {
+    "username": "18010148",
+    "passwordHash": "$2b$10$4JAnXVtgtev2k.dg9.W9S.5/uO0yADvkpXYmg/oDvH2Mnpq3Lr9ZK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "7903ee94-75b8-4c43-acde-d7b81e138170",
+    "status": "active"
+  },
+  {
+    "username": "18010149",
+    "passwordHash": "$2b$10$FYddws5A.nvjv.HN1ERFmecSyjQGWpk0OokgNpWHOXDq09QTdwkYe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ad58d9eb-d9c6-4f87-a56e-1ad7f19a7d9a",
+    "status": "active"
+  },
+  {
+    "username": "18010150",
+    "passwordHash": "$2b$10$ikJVA8YbidqbJG8p8o6WVO.Muo1I9ql4tgHo8oW9NaOwSOaj1UB4G",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "39d6708b-fd4d-4e33-8949-6bae8e10a5da",
+    "status": "active"
+  },
+  {
+    "username": "18010151",
+    "passwordHash": "$2b$10$aL34kzeBtozzTZBSUBWlD./uyJYaB.4AUh.lCdmy/62Odemyfzc4u",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "6dfe833e-f152-4feb-b1b1-be3247fe5e16",
+    "status": "active"
+  },
+  {
+    "username": "18010152",
+    "passwordHash": "$2b$10$VF.0MWuI/RxwGGcCm/vW1etSuvbUfK/8OWVpuNlh9PwPPDC1jMszK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "200f3d9e-03c5-4480-92e7-fc0b469f5dd5",
+    "status": "active"
+  },
+  {
+    "username": "18010153",
+    "passwordHash": "$2b$10$IzWMMGJdreX8krBm/tk48eAFHQ3LqRIp2Hzge4jy5XgwRG7gNYq.y",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "d02981ea-03db-4a5c-98bc-937c51b6b9d5",
+    "status": "active"
+  },
+  {
+    "username": "18010154",
+    "passwordHash": "$2b$10$/nPGCi3EH.bZ8Cn63Lvz2O0d2dI1J/rc0WoCO6Ry/Pwv0ZBMPuDtu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "9f43a46b-7cb6-41a5-b4eb-0bc59d607170",
+    "status": "active"
+  },
+  {
+    "username": "18010155",
+    "passwordHash": "$2b$10$PdqiugDzCIZP1FimtZj2C.mhP0oTXBTu/YwHsLTy0sgpOLFev5LIC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "6d0a0e2c-b7bb-45ea-8027-53386b9f3437",
+    "status": "active"
+  },
+  {
+    "username": "18010156",
+    "passwordHash": "$2b$10$dgMmC5dCLnT5bQaF7nBIWextk5JQMIEqceqSAqu5Ig0zUDSBhslxy",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "534985d8-a2f2-4981-bf58-6304a5590238",
+    "status": "active"
+  },
+  {
+    "username": "18010157",
+    "passwordHash": "$2b$10$E/1mL4RwmnS3AVhhWl5btePpj2KlxiVAnjcyu.RtO94anll1TjDXe",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "3efd7795-771c-4791-98ac-ba48d3f77ce9",
+    "status": "active"
+  },
+  {
+    "username": "18010158",
+    "passwordHash": "$2b$10$E7NN005Yo9n/PS7TVLDLZucclNSaRnhYh0o.Rcvr.RhLLe1JplroC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "53002b05-ebb1-4784-b6ec-afd4aa09fee5",
+    "status": "active"
+  },
+  {
+    "username": "18010159",
+    "passwordHash": "$2b$10$i7./LwFXPJZuDb6vXIlMtuaCyn5MnFkUzm2FQPEGTyCPmYJx5g.D6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "41df1dc0-10c3-4cfa-874f-d5ded81bf0e0",
+    "status": "active"
+  },
+  {
+    "username": "18010160",
+    "passwordHash": "$2b$10$ckpgQL/YzqAfB.DWwEyAQuWxW8e4Mf2ueyFLWUVgkMO5UI3lXctnS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "12e6ca4d-d47b-4af1-8ee2-782ed3ee3873",
+    "status": "active"
+  },
+  {
+    "username": "18010161",
+    "passwordHash": "$2b$10$y7pmKSji0aLeWLzqzDC/rOyacS0rI0Q2D4HOLBgMmhELI96Rp6XWW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "b14cff01-51aa-46cb-9da7-906c5cbc42c2",
+    "status": "active"
+  },
+  {
+    "username": "18010162",
+    "passwordHash": "$2b$10$NykYM0sOh87vKWmB.oVrx.ybGBUrXWNt0AAHIsQGAcS5Xhq5kVyQK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f3523f17-40c3-4ff5-89b2-bfafa89efe5e",
+    "status": "active"
+  },
+  {
+    "username": "18010163",
+    "passwordHash": "$2b$10$X/roZswXtQJWCJjve2E/nuM64/KdE6WzlEL7JYKV9kOLAZsfOaipC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "49cc8a1b-e147-43f0-b424-d658707ba908",
+    "status": "active"
+  },
+  {
+    "username": "18010164",
+    "passwordHash": "$2b$10$udaZao5eqc1Yq/NykO5D7.lQgV.6qe3hCDuUgBmP38NGMDw02IuuK",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "bfc5e26f-a7b6-41e9-8800-c2c6fa39565e",
+    "status": "active"
+  },
+  {
+    "username": "18010165",
+    "passwordHash": "$2b$10$4CIYM1N1XxFiEf5HLyUuQODVVArbBdlHMaI4FMyxmI7n4Ij1Fvvxm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "956eff02-7d25-47d3-acd1-41240c228c23",
+    "status": "active"
+  },
+  {
+    "username": "18010166",
+    "passwordHash": "$2b$10$VwQY2U6ap48IG7UXIR.ZW.ooghHDargpNbcVYxsUquR.xHdc8i.ta",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e2beed1b-f591-476e-910b-ee1bb511a749",
+    "status": "active"
+  },
+  {
+    "username": "18010167",
+    "passwordHash": "$2b$10$AFm/oP1yVADKqITubyNuKO.HJ82ux97KTqh3U69kHWuNZCrqexb06",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "41f55d57-57ca-4512-ac2c-cd288ed303eb",
+    "status": "active"
+  },
+  {
+    "username": "18010168",
+    "passwordHash": "$2b$10$/y1AeF1MyEQ27gPWs2DSm..utgYTfQHiE7Wqb5w0NEDjcv3OizWAm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "5f7cc675-9f53-41ba-82f2-34f0b2635958",
+    "status": "active"
+  },
+  {
+    "username": "18010170",
+    "passwordHash": "$2b$10$k/xiZ.9SJKjgTuXfiqO4u.OHWGrzmAKxhjnEiHD9FQpxGz9O5zw8K",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e2e67735-84b3-4b46-8eb2-d1a8bdadb00d",
+    "status": "active"
+  },
+  {
+    "username": "18010171",
+    "passwordHash": "$2b$10$Dd8PPBMRZtWmkaynqkW42eGbMSAS2KV2dsQUV1iy1vdHssjE82HM2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "1e6020eb-c757-4c37-8298-4018196dc577",
+    "status": "active"
+  },
+  {
+    "username": "18010172",
+    "passwordHash": "$2b$10$DSq28ePjOeN/KKLwdCa61OpL2PI7IwMLmLFvCbN9V3pA9SNrBNOCC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "98216bf0-1772-4422-a744-f93e2fe3e9b3",
+    "status": "active"
+  },
+  {
+    "username": "18010173",
+    "passwordHash": "$2b$10$XZjNoPhj2DlOSembqbVobuL2hP.a0obcG7jsoQt1yELqPFOBs/tci",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "7db33f9b-5e9a-42f3-9d07-581f77d28c5e",
+    "status": "active"
+  },
+  {
+    "username": "18010174",
+    "passwordHash": "$2b$10$MvO6nN/.uv8nMoXE.zUGU.YEPEzdkA48cWLNsMHF9W0ShO0mFMx6W",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "44db83b0-5ec4-4bd6-9d8d-f94b2631745e",
+    "status": "active"
+  },
+  {
+    "username": "18010175",
+    "passwordHash": "$2b$10$D.nSPowIzLD2c6nHZaU5n.bsR0/K7/QvYvlp4c6sRmbhygPZtFVx2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "02b43325-2447-48a3-83cf-f16ff959feb0",
+    "status": "active"
+  },
+  {
+    "username": "18010176",
+    "passwordHash": "$2b$10$Vyn4kxTwKtaOPX0BQykyeOje15l1jJmddPcHavt6UJT4fu2Z1TXY6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4575f082-eff5-44ca-bc91-a69ffbbc6b30",
+    "status": "active"
+  },
+  {
+    "username": "18010177",
+    "passwordHash": "$2b$10$ADIf3iLW6ZYoo5LLpwk7keCB1HfXlAtFkQIGauE4RaR2b2FWjnoYW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f676b27e-2062-433b-8810-c02b80180887",
+    "status": "active"
+  },
+  {
+    "username": "18010178",
+    "passwordHash": "$2b$10$WWlOKiasdn2kelixj0kC/O30eOSmBDW974h4fqKpG8G6m4dKFkUES",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "2fdd3307-64bc-4384-8138-426fb0fe6310",
+    "status": "active"
+  },
+  {
+    "username": "18010180",
+    "passwordHash": "$2b$10$mnecIDpXYI.ePABTVERK0ucYRhu3WNkYqzJSd3Crwqx8FLd.hdizy",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "47a72fb6-96fd-4c90-a6e6-dab60f65cc6b",
+    "status": "active"
+  },
+  {
+    "username": "18010182",
+    "passwordHash": "$2b$10$FCdD9trPizw9eMRGn0fmBughiytN7tMHgUW8lbSpJiHyC0bQ0UJIm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "004091f3-6209-4c3c-ad21-a83238388beb",
+    "status": "active"
+  },
+  {
+    "username": "18010184",
+    "passwordHash": "$2b$10$VxPGI7haLLS7429GEIQQ/eCipqA.zt9a3oLS5zCV.RA7m4PpbO9sG",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "a0eb516d-c06d-4939-9d28-1170bbd18ab9",
+    "status": "active"
+  },
+  {
+    "username": "18010185",
+    "passwordHash": "$2b$10$yKp1E4THp/jmti1r/hjbLeR2MJk6HVjFHiI81vCP0L7ZupYRpO4LC",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "77a06b27-4ab7-4866-a62b-2408a8f7baa7",
+    "status": "active"
+  },
+  {
+    "username": "18010186",
+    "passwordHash": "$2b$10$9VQt5tZH0LXoSQvsohtP.OGuLeJ21zko6V0FrYYvMwhXnSJtv8Mty",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4b44f0e0-d1cf-4321-b79f-ebe4d0ff5102",
+    "status": "active"
+  },
+  {
+    "username": "18010187",
+    "passwordHash": "$2b$10$Td3LUEBtPeBpewacPi5lL.40TFA1cTVS9H8i.ab1woUcDwxAG8q02",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "e697f3e8-8221-4b5f-8abb-073150fcf2ae",
+    "status": "active"
+  },
+  {
+    "username": "18010188",
+    "passwordHash": "$2b$10$TTlf4WdZP2rbhhSa1oI5YegIQzwt8iJPVHRIO418ofAv1cF0yOwqS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "cc82619a-252e-4fa5-a99e-379b864988a3",
+    "status": "active"
+  },
+  {
+    "username": "18010190",
+    "passwordHash": "$2b$10$toJrVB4gbdHac/HmGGeQUOd.fkKOftnioubREnmqbAQZMkSyE7D.q",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "6353ec13-56bd-44cd-92f4-65d4dd86815f",
+    "status": "active"
+  },
+  {
+    "username": "18010192",
+    "passwordHash": "$2b$10$Y7fffa3riZQf8BD2YeZuee/SvUw1am0H0mTLqCmkRq7zPOn3rdJq2",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f6fe2d45-e141-42d0-90d5-a8871b44d964",
+    "status": "active"
+  },
+  {
+    "username": "18010194",
+    "passwordHash": "$2b$10$ms598.7iImDmUT8Eu0F97Onod5lXhzig6zj6yTRunrqbbPEAYobiW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "13e656d0-3b14-4feb-95cf-08e5334507d5",
+    "status": "active"
+  },
+  {
+    "username": "18010195",
+    "passwordHash": "$2b$10$oFlfwp6jLf2ZYYiBzxvZjeYFEktPfVw3sBZ.qOZEqg.XKn2mZWA1.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "fba36523-1b9f-4dae-af69-20cd29b9c39c",
+    "status": "active"
+  },
+  {
+    "username": "18010196",
+    "passwordHash": "$2b$10$xeA.B88jYIBumu5pbl7/recbOGUBZig5GXMcck8xUpfDImrUHmWp6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c89fbd04-4672-4c61-994a-348b9a7a0850",
+    "status": "active"
+  },
+  {
+    "username": "18010197",
+    "passwordHash": "$2b$10$F44BhnPnsvjbYFcLif7Ple.MwAWcNaU8rgGT8MNpPVuLP3szZHMZq",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "ebb4681d-50cc-47cf-95b3-27c581febbf2",
+    "status": "active"
+  },
+  {
+    "username": "18010198",
+    "passwordHash": "$2b$10$pncPAEbt/lL6mOOAQ36XLetPW6ayXl08PExoKC0c9WaMYHbFBmoCu",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "bc4caddd-2dd9-453b-9b92-fb024d03d514",
+    "status": "active"
+  },
+  {
+    "username": "18010199",
+    "passwordHash": "$2b$10$QD4fostmbGdY33S7yz0KB.zC7kOC6Tc/H4Riplz6sQaRUFQ7Ybvj6",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "c55aa2bf-3e7c-4e8b-a351-4a164509cc81",
+    "status": "active"
+  },
+  {
+    "username": "18010201",
+    "passwordHash": "$2b$10$1BImi3CZ7uO6KCxAXfYV6.3HayiS84Ykmm46UzqKWKzMWgs9g60/e",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "32e87883-db2e-4550-96df-2287cbc1c03a",
+    "status": "active"
+  },
+  {
+    "username": "18010202",
+    "passwordHash": "$2b$10$5IwYow8yZQBxNw0lAHgi.ODpc2czqsLHGiKu.uXNRWO2ruFKvzy7.",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "4ae05629-1e60-4067-9115-1705814b55d7",
+    "status": "active"
+  },
+  {
+    "username": "18010203",
+    "passwordHash": "$2b$10$MikdVEBi4DzRS4fOWZm27OVT8X1S1spduDawgGNcc3wG52k3qIL1K",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "054c82fc-cae7-4803-95f6-a3227dc44209",
+    "status": "active"
+  },
+  {
+    "username": "18010204",
+    "passwordHash": "$2b$10$WlTQ8KlCDgg4inzs2/ZDq.c1KXSBpSC5pO7/0e8dFVRJLWuXK2KrS",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "dd307d6c-c29a-4193-b1fd-84bd8f1af237",
+    "status": "active"
+  },
+  {
+    "username": "18010205",
+    "passwordHash": "$2b$10$2JSgBddsuBGkDcOrEt2F8Oz9XqlZnOIyw/UOW8Yk1Mib1saiyOJSW",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "f3299c0a-8dd6-4373-a96b-54ee83a381f6",
+    "status": "active"
+  },
+  {
+    "username": "18010010",
+    "passwordHash": "$2b$10$kQPNpE44N.A2JhXdYPUtou/Nm7SHjg1vrz0sRBt5GV8RmNOuzLD36",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "843d375e-0eb3-4125-ab1e-b35f62e956ac",
+    "status": "active"
+  },
+  {
+    "username": "18010020",
+    "passwordHash": "$2b$10$y4j4MtSfCPTC1nLy0yQupu12Wt.MWEQ5YceI47v79GxQuAktVqSJm",
+    "role": "admin",
+    "email": null,
+    "authProvider": "local",
+    "providerSubject": null,
+    "schoolId": "00bf6888-df97-4475-bdb1-a65a089a5a5e",
+    "status": "active"
   }
 ]

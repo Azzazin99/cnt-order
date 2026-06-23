@@ -2,25 +2,31 @@ import { promises as fs } from "fs";
 import path from "path";
 
 import { dbQuery, isDatabaseEnabled } from "@/lib/db";
+import { formatSchoolDisplayName } from "@/lib/school-display";
+
+export { formatSchoolDisplayName };
 
 export type SchoolStatus = "active" | "inactive";
 
 export type SchoolRecord = {
   id: string;
   name: string;
+  schoolCode: string;
+  moeCode: string;
   status: SchoolStatus;
 };
 
-export type SchoolDomainRecord = {
-  id: string;
-  schoolId: string;
-  domain: string;
-  isVerified: boolean;
-  isPrimary: boolean;
-};
+export type AddSchoolError =
+  | "invalid_name"
+  | "invalid_smis"
+  | "invalid_moe"
+  | "code_exists"
+  | "moe_exists";
 
 const schoolsFilePath = path.join(process.cwd(), "data", "schools.json");
-const domainsFilePath = path.join(process.cwd(), "data", "school_domains.json");
+
+const SMIS_PATTERN = /^\d{8}$/;
+const MOE_PATTERN = /^\d{10}$/;
 
 function canWriteLocalFiles() {
   return process.env.VERCEL !== "1";
@@ -35,21 +41,45 @@ async function ensureSchoolsFiles() {
   } catch {
     await fs.writeFile(schoolsFilePath, "[]", "utf-8");
   }
-  try {
-    await fs.access(domainsFilePath);
-  } catch {
-    await fs.writeFile(domainsFilePath, "[]", "utf-8");
-  }
 }
 
-function normalizeDomain(domain: string) {
-  return domain.trim().toLowerCase();
+export function normalizeSchoolCode(code: string) {
+  return code.trim();
 }
 
-export function emailDomain(email: string) {
-  const at = email.lastIndexOf("@");
-  if (at < 0 || at === email.length - 1) return null;
-  return normalizeDomain(email.slice(at + 1));
+export function validateSmisCode(code: string) {
+  return SMIS_PATTERN.test(code.trim());
+}
+
+export function validateMoeCode(code: string) {
+  const trimmed = code.trim();
+  if (!trimmed) return true;
+  return MOE_PATTERN.test(trimmed);
+}
+
+function mapSchoolRow(row: {
+  id: string;
+  name: string;
+  school_code?: string | null;
+  moe_code?: string | null;
+  status: string;
+}): SchoolRecord {
+  return {
+    id: row.id,
+    name: row.name,
+    schoolCode: row.school_code ?? "",
+    moeCode: row.moe_code ?? "",
+    status: row.status === "inactive" ? "inactive" : "active",
+  };
+}
+
+const schoolSelectColumns =
+  "id, name, school_code, moe_code, status";
+
+/** มีโรงเรียนที่ import แล้ว — ใช้กำหนด scope เอกสารสาธารณะ */
+export async function isMultiSchoolMode(): Promise<boolean> {
+  const schools = await getSchools();
+  return schools.some((school) => school.schoolCode.trim() !== "");
 }
 
 export async function getSchools(): Promise<SchoolRecord[]> {
@@ -57,20 +87,26 @@ export async function getSchools(): Promise<SchoolRecord[]> {
     const { rows } = await dbQuery<{
       id: string;
       name: string;
+      school_code: string | null;
+      moe_code: string | null;
       status: string;
-    }>(`SELECT id, name, status FROM schools ORDER BY name ASC`);
-    return rows.map((r) => ({
-      id: r.id,
-      name: r.name,
-      status: r.status === "inactive" ? "inactive" : "active",
-    }));
+    }>(`SELECT ${schoolSelectColumns} FROM schools ORDER BY name ASC`);
+    return rows.map((r) => mapSchoolRow(r));
   }
 
   try {
     await ensureSchoolsFiles();
     const raw = await fs.readFile(schoolsFilePath, "utf-8");
-    const parsed = JSON.parse(raw) as SchoolRecord[];
-    return parsed;
+    const parsed = JSON.parse(raw) as Array<
+      SchoolRecord & { schoolCode?: string; moeCode?: string }
+    >;
+    return parsed.map((s) => ({
+      id: s.id,
+      name: s.name,
+      schoolCode: s.schoolCode ?? "",
+      moeCode: s.moeCode ?? "",
+      status: s.status === "inactive" ? "inactive" : "active",
+    }));
   } catch {
     return [];
   }
@@ -81,84 +117,114 @@ export async function getSchoolById(id: string): Promise<SchoolRecord | null> {
     const { rows } = await dbQuery<{
       id: string;
       name: string;
+      school_code: string | null;
+      moe_code: string | null;
       status: string;
-    }>(`SELECT id, name, status FROM schools WHERE id = $1`, [id]);
+    }>(`SELECT ${schoolSelectColumns} FROM schools WHERE id = $1`, [id]);
     const r = rows[0];
     if (!r) return null;
-    return {
-      id: r.id,
-      name: r.name,
-      status: r.status === "inactive" ? "inactive" : "active",
-    };
+    return mapSchoolRow(r);
   }
 
   const schools = await getSchools();
   return schools.find((s) => s.id === id) ?? null;
 }
 
-export async function hasVerifiedSchoolDomains(): Promise<boolean> {
-  const domains = await getSchoolDomains();
-  return domains.some((d) => d.isVerified);
-}
+export async function getSchoolByCode(
+  schoolCode: string,
+): Promise<SchoolRecord | null> {
+  const normalized = normalizeSchoolCode(schoolCode);
+  if (!normalized) return null;
 
-export async function getSchoolDomains(): Promise<SchoolDomainRecord[]> {
   if (isDatabaseEnabled()) {
     const { rows } = await dbQuery<{
       id: string;
-      school_id: string;
-      domain: string;
-      is_verified: boolean;
-      is_primary: boolean;
+      name: string;
+      school_code: string | null;
+      moe_code: string | null;
+      status: string;
     }>(
-      `SELECT id, school_id, domain, is_verified, is_primary
-       FROM school_domains
-       ORDER BY domain ASC`,
+      `SELECT ${schoolSelectColumns} FROM schools WHERE school_code = $1`,
+      [normalized],
     );
-    return rows.map((r) => ({
-      id: r.id,
-      schoolId: r.school_id,
-      domain: normalizeDomain(r.domain),
-      isVerified: r.is_verified,
-      isPrimary: r.is_primary,
-    }));
+    const r = rows[0];
+    if (!r) return null;
+    return mapSchoolRow(r);
   }
 
-  try {
-    await ensureSchoolsFiles();
-    const raw = await fs.readFile(domainsFilePath, "utf-8");
-    return JSON.parse(raw) as SchoolDomainRecord[];
-  } catch {
-    return [];
-  }
+  const schools = await getSchools();
+  return schools.find((s) => normalizeSchoolCode(s.schoolCode) === normalized) ?? null;
 }
 
-export async function findSchoolIdByEmailDomain(
-  email: string,
-): Promise<{ schoolId: string; domain: string } | null> {
-  const dom = emailDomain(email);
-  if (!dom) return null;
+export async function getSchoolByMoeCode(
+  moeCode: string,
+): Promise<SchoolRecord | null> {
+  const normalized = moeCode.trim();
+  if (!normalized) return null;
 
-  const domains = await getSchoolDomains();
-  const match = domains.find(
-    (d) => d.isVerified && normalizeDomain(d.domain) === dom,
-  );
-  if (!match) return null;
-  return { schoolId: match.schoolId, domain: match.domain };
+  if (isDatabaseEnabled()) {
+    const { rows } = await dbQuery<{
+      id: string;
+      name: string;
+      school_code: string | null;
+      moe_code: string | null;
+      status: string;
+    }>(
+      `SELECT ${schoolSelectColumns} FROM schools WHERE moe_code = $1`,
+      [normalized],
+    );
+    const r = rows[0];
+    if (!r) return null;
+    return mapSchoolRow(r);
+  }
+
+  const schools = await getSchools();
+  return schools.find((s) => s.moeCode === normalized) ?? null;
 }
 
 export async function addSchool(input: {
   name: string;
+  schoolCode: string;
+  moeCode?: string;
   status?: SchoolStatus;
-}): Promise<SchoolRecord> {
+}): Promise<SchoolRecord | { error: AddSchoolError }> {
   const id = crypto.randomUUID();
   const status = input.status ?? "active";
+  const name = input.name.trim();
+  const schoolCode = normalizeSchoolCode(input.schoolCode);
+  const moeCode = (input.moeCode ?? "").trim();
+
+  if (!name) {
+    return { error: "invalid_name" };
+  }
+  if (!validateSmisCode(schoolCode)) {
+    return { error: "invalid_smis" };
+  }
+  if (!validateMoeCode(moeCode)) {
+    return { error: "invalid_moe" };
+  }
+
+  const existing = await getSchoolByCode(schoolCode);
+  if (existing) {
+    return { error: "code_exists" };
+  }
+  if (moeCode) {
+    const existingMoe = await getSchoolByMoeCode(moeCode);
+    if (existingMoe) {
+      return { error: "moe_exists" };
+    }
+  }
 
   if (isDatabaseEnabled()) {
-    await dbQuery(
-      `INSERT INTO schools (id, name, status) VALUES ($1, $2, $3)`,
-      [id, input.name.trim(), status],
-    );
-    return { id, name: input.name.trim(), status };
+    try {
+      await dbQuery(
+        `INSERT INTO schools (id, name, school_code, moe_code, status) VALUES ($1, $2, $3, $4, $5)`,
+        [id, name, schoolCode, moeCode || null, status],
+      );
+    } catch {
+      return { error: "code_exists" };
+    }
+    return { id, name, schoolCode, moeCode, status };
   }
 
   if (!canWriteLocalFiles()) {
@@ -166,140 +232,30 @@ export async function addSchool(input: {
   }
   await ensureSchoolsFiles();
   const schools = await getSchools();
-  const row: SchoolRecord = { id, name: input.name.trim(), status };
+  const row: SchoolRecord = { id, name, schoolCode, moeCode, status };
   schools.push(row);
   await fs.writeFile(schoolsFilePath, JSON.stringify(schools, null, 2), "utf-8");
   return row;
 }
 
-export async function addSchoolDomain(input: {
-  schoolId: string;
-  domain: string;
-  isVerified?: boolean;
-  isPrimary?: boolean;
-}): Promise<SchoolDomainRecord | { error: "exists" | "school_not_found" }> {
-  const domain = normalizeDomain(input.domain);
-  if (!domain) {
-    return { error: "school_not_found" };
-  }
-
-  const school = await getSchoolById(input.schoolId);
-  if (!school) return { error: "school_not_found" };
-
-  const id = crypto.randomUUID();
-  const isVerified = input.isVerified ?? true;
-  const isPrimary = input.isPrimary ?? false;
-
-  if (isDatabaseEnabled()) {
-    try {
-      await dbQuery(
-        `INSERT INTO school_domains (id, school_id, domain, is_verified, is_primary)
-         VALUES ($1, $2, $3, $4, $5)`,
-        [id, input.schoolId, domain, isVerified, isPrimary],
-      );
-    } catch {
-      return { error: "exists" };
-    }
-    return { id, schoolId: input.schoolId, domain, isVerified, isPrimary };
-  }
-
-  if (!canWriteLocalFiles()) {
-    throw new Error("SCHOOL_STORAGE_UNAVAILABLE");
-  }
-  const domains = await getSchoolDomains();
-  if (domains.some((d) => normalizeDomain(d.domain) === domain)) {
-    return { error: "exists" };
-  }
-  const row: SchoolDomainRecord = {
-    id,
-    schoolId: input.schoolId,
-    domain,
-    isVerified,
-    isPrimary,
-  };
-  domains.push(row);
-  await fs.writeFile(domainsFilePath, JSON.stringify(domains, null, 2), "utf-8");
-  return row;
-}
-
-export async function removeSchoolDomain(
-  domainId: string,
-): Promise<SchoolDomainRecord | null> {
-  if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      id: string;
-      school_id: string;
-      domain: string;
-      is_verified: boolean;
-      is_primary: boolean;
-    }>(
-      `DELETE FROM school_domains WHERE id = $1
-       RETURNING id, school_id, domain, is_verified, is_primary`,
-      [domainId],
-    );
-    const r = rows[0];
-    if (!r) return null;
-    return {
-      id: r.id,
-      schoolId: r.school_id,
-      domain: normalizeDomain(r.domain),
-      isVerified: r.is_verified,
-      isPrimary: r.is_primary,
-    };
-  }
-
-  if (!canWriteLocalFiles()) {
-    throw new Error("SCHOOL_STORAGE_UNAVAILABLE");
-  }
-  const domains = await getSchoolDomains();
-  const found = domains.find((d) => d.id === domainId) ?? null;
-  if (!found) return null;
-  const next = domains.filter((d) => d.id !== domainId);
-  await fs.writeFile(domainsFilePath, JSON.stringify(next, null, 2), "utf-8");
-  return found;
-}
-
-export async function setSchoolDomainVerified(
-  domainId: string,
-  isVerified: boolean,
-): Promise<SchoolDomainRecord | null> {
-  if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      id: string;
-      school_id: string;
-      domain: string;
-      is_verified: boolean;
-      is_primary: boolean;
-    }>(
-      `UPDATE school_domains SET is_verified = $2 WHERE id = $1
-       RETURNING id, school_id, domain, is_verified, is_primary`,
-      [domainId, isVerified],
-    );
-    const r = rows[0];
-    if (!r) return null;
-    return {
-      id: r.id,
-      schoolId: r.school_id,
-      domain: normalizeDomain(r.domain),
-      isVerified: r.is_verified,
-      isPrimary: r.is_primary,
-    };
-  }
-
-  if (!canWriteLocalFiles()) {
-    throw new Error("SCHOOL_STORAGE_UNAVAILABLE");
-  }
-  const domains = await getSchoolDomains();
-  const idx = domains.findIndex((d) => d.id === domainId);
-  if (idx === -1) return null;
-  domains[idx] = { ...domains[idx]!, isVerified };
-  await fs.writeFile(domainsFilePath, JSON.stringify(domains, null, 2), "utf-8");
-  return domains[idx]!;
-}
-
-export async function getDomainsBySchoolId(
+export async function removeSchool(
   schoolId: string,
-): Promise<SchoolDomainRecord[]> {
-  const all = await getSchoolDomains();
-  return all.filter((d) => d.schoolId === schoolId);
+): Promise<SchoolRecord | null> {
+  const school = await getSchoolById(schoolId);
+  if (!school) return null;
+
+  if (isDatabaseEnabled()) {
+    await dbQuery(`DELETE FROM schools WHERE id = $1`, [schoolId]);
+    return school;
+  }
+
+  if (!canWriteLocalFiles()) {
+    throw new Error("SCHOOL_STORAGE_UNAVAILABLE");
+  }
+  await ensureSchoolsFiles();
+  const schools = await getSchools();
+  const next = schools.filter((item) => item.id !== schoolId);
+  await fs.writeFile(schoolsFilePath, JSON.stringify(next, null, 2), "utf-8");
+
+  return school;
 }

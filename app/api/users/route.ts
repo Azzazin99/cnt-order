@@ -21,7 +21,6 @@ function safeUser(user: UserRecord) {
     role: user.role,
     email: user.email,
     schoolId: user.schoolId,
-    authProvider: user.authProvider,
   };
 }
 

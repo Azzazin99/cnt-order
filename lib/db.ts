@@ -3,12 +3,14 @@ import path from "path";
 import { Pool } from "pg";
 import type { QueryResultRow } from "pg";
 
+import { DEFAULT_CATEGORY } from "@/lib/document-categories";
+
 type DocumentSeed = {
   id: string;
   issuedAt: string;
   orderNo: string;
   title: string;
-  department: string;
+  category: string;
   orderDate: string;
   fileUrl: string;
   schoolId?: string | null;
@@ -84,7 +86,7 @@ async function seedFromJsonFiles() {
     for (const doc of docs) {
       await pool.query(
         `INSERT INTO documents
-          (id, issued_at, order_no, title, department, order_date, file_url, school_id)
+          (id, issued_at, order_no, title, category, order_date, file_url, school_id)
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
          ON CONFLICT (id) DO NOTHING`,
         [
@@ -92,7 +94,7 @@ async function seedFromJsonFiles() {
           doc.issuedAt,
           doc.orderNo,
           doc.title,
-          doc.department,
+          doc.category ?? DEFAULT_CATEGORY,
           doc.orderDate,
           doc.fileUrl,
           doc.schoolId ?? null,
@@ -228,6 +230,36 @@ async function runSchemaMigrations(client: Pool) {
     ON users (auth_provider, provider_subject)
     WHERE provider_subject IS NOT NULL;
   `);
+
+  await client.query(`
+    ALTER TABLE schools ADD COLUMN IF NOT EXISTS school_code TEXT;
+  `);
+  await client.query(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_schools_school_code_lower
+    ON schools (lower(school_code)) WHERE school_code IS NOT NULL;
+  `);
+  await client.query(`
+    ALTER TABLE schools ADD COLUMN IF NOT EXISTS moe_code TEXT;
+  `);
+  await client.query(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_schools_moe_code
+    ON schools (moe_code) WHERE moe_code IS NOT NULL;
+  `);
+
+  await client.query(`
+    ALTER TABLE documents ADD COLUMN IF NOT EXISTS category TEXT;
+  `);
+  await client.query(`
+    UPDATE documents SET category = 'others' WHERE category IS NULL;
+  `);
+  await client
+    .query(`ALTER TABLE documents ALTER COLUMN category SET NOT NULL`)
+    .catch(() => {
+      /* column may not exist yet on fresh DB */
+    });
+  await client.query(`
+    ALTER TABLE documents DROP COLUMN IF EXISTS department;
+  `);
 }
 
 async function ensureMigrationsOnce() {
@@ -257,7 +289,7 @@ async function ensureInitialized() {
         issued_at TEXT NOT NULL,
         order_no TEXT NOT NULL,
         title TEXT NOT NULL,
-        department TEXT NOT NULL,
+        category TEXT NOT NULL,
         order_date TEXT NOT NULL,
         file_url TEXT NOT NULL,
         sort_id BIGSERIAL

@@ -1,38 +1,22 @@
 [
   {
-    "id": "1",
-    "issuedAt": "8/6/2023, 19:26:03",
-    "orderNo": "111/2566",
-    "title": "แต่งตั้งครูวิชาการครู และบุคลากร ปฏิบัติหน้าที่เวรรักษาการณ์ และผู้ตรวจเวร เดือน มิถุนายน พ.ศ. 2566",
-    "department": "งานมารยาทรักษาความปลอดภัย",
-    "orderDate": "1/6/2023",
-    "fileUrl": "http://circular.otepc.go.th/files/K1-2569.pdf"
+    "id": "d1",
+    "issuedAt": "2026-01-01",
+    "orderNo": "001",
+    "title": "District doc",
+    "category": "others",
+    "orderDate": "2026-01-01",
+    "fileUrl": "#",
+    "schoolId": null
   },
   {
-    "id": "otepc-2569-001",
-    "issuedAt": "25/4/2026, 21:32:00",
-    "orderNo": "คำสั่ง ก.ค.ศ. ที่ 1/2569",
-    "title": "แต่งตั้งอนุกรรมการ ใน อ.ก.ค.ศ. เขตพื้นที่การศึกษาประถมศึกษา แทนตำแหน่งที่ว่าง",
-    "department": "สำนักงาน ก.ค.ศ.",
-    "orderDate": "14/1/2569",
-    "fileUrl": "http://circular.otepc.go.th/files/K3-2569_OCR.pdf"
-  },
-  {
-    "id": "otepc-2569-002",
-    "issuedAt": "25/4/2026, 21:32:10",
-    "orderNo": "คำสั่ง ก.ค.ศ. ที่ 3/2569",
-    "title": "แต่งตั้งอนุกรรมการ ใน อ.ก.ค.ศ. เขตพื้นที่การศึกษาประถมศึกษา แทนตำแหน่งที่ว่าง",
-    "department": "สำนักงาน ก.ค.ศ.",
-    "orderDate": "13/2/2569",
-    "fileUrl": "#"
-  },
-  {
-    "id": "otepc-2569-003",
-    "issuedAt": "25/4/2026, 21:32:20",
-    "orderNo": "คำสั่ง ก.ค.ศ. ที่ 4/2569",
-    "title": "แต่งตั้งอนุกรรมการ ใน อ.ก.ค.ศ. เขตพื้นที่การศึกษามัธยมศึกษา แทนตำแหน่งที่ว่าง",
-    "department": "สำนักงาน ก.ค.ศ.",
-    "orderDate": "13/2/2569",
-    "fileUrl": "http://circular.otepc.go.th/files/K4-2569_OCR.pdf"
+    "id": "d2",
+    "issuedAt": "2026-01-02",
+    "orderNo": "002",
+    "title": "School A doc",
+    "category": "others",
+    "orderDate": "2026-01-02",
+    "fileUrl": "#",
+    "schoolId": "452f4d3e-1413-4cd2-8eec-2bf8921491c1"
   }
 ]

@@ -3,7 +3,7 @@ import path from "path";
 import { dbQuery, isDatabaseEnabled } from "@/lib/db";
 
 export type UserRole = "admin" | "editor";
-export type AuthProvider = "local" | "google" | "microsoft";
+export type AuthProvider = "local";
 export type UserStatus = "active" | "inactive";
 
 export type UserRecord = {
@@ -22,9 +22,7 @@ function normalizeRole(role: string): UserRole {
   return "editor";
 }
 
-function normalizeAuthProvider(v: string | null | undefined): AuthProvider {
-  if (v === "google") return "google";
-  if (v === "microsoft") return "microsoft";
+function normalizeAuthProvider(_v: string | null | undefined): AuthProvider {
   return "local";
 }
 
@@ -153,69 +151,6 @@ export async function findUserByUsername(username: string) {
 
   const users = await getUsers();
   return users.find((user) => user.username === username) ?? null;
-}
-
-export async function findUserByEmail(email: string) {
-  const normalized = email.trim().toLowerCase();
-  if (!normalized) return null;
-
-  if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      username: string;
-      password_hash: string | null;
-      role: string;
-      email: string | null;
-      auth_provider: string;
-      provider_subject: string | null;
-      school_id: string | null;
-      status: string;
-    }>(
-      `SELECT username, password_hash, role, email, auth_provider, provider_subject, school_id, status
-       FROM users WHERE lower(email) = lower($1)`,
-      [normalized],
-    );
-    const row = rows[0];
-    if (!row) return null;
-    return mapDbUser(row);
-  }
-
-  const users = await getUsers();
-  return (
-    users.find((u) => (u.email || "").toLowerCase() === normalized) ?? null
-  );
-}
-
-export async function findUserByProviderAndSubject(
-  provider: AuthProvider,
-  sub: string,
-) {
-  if (!sub || provider === "local") return null;
-  if (isDatabaseEnabled()) {
-    const { rows } = await dbQuery<{
-      username: string;
-      password_hash: string | null;
-      role: string;
-      email: string | null;
-      auth_provider: string;
-      provider_subject: string | null;
-      school_id: string | null;
-      status: string;
-    }>(
-      `SELECT username, password_hash, role, email, auth_provider, provider_subject, school_id, status
-       FROM users WHERE provider_subject = $1 AND auth_provider = $2`,
-      [sub, provider],
-    );
-    const row = rows[0];
-    if (!row) return null;
-    return mapDbUser(row);
-  }
-
-  const users = await getUsers();
-  return (
-    users.find(
-      (u) => u.providerSubject === sub && u.authProvider === provider,
-    ) ?? null
-  );
 }
 
 async function saveUsers(users: UserRecord[]) {
@@ -389,76 +324,4 @@ export async function removeUser(username: string) {
   const remaining = users.filter((item) => item.username !== username);
   await saveUsers(remaining);
   return removed;
-}
-
-export type UpsertOAuthUserInput = {
-  email: string;
-  sub: string;
-  schoolId: string | null;
-  role: UserRole;
-};
-
-/**
- * สร้างหรืออัปเดตผู้ใช้จาก OAuth (username = email ตัวพิมพ์เล็ก)
- */
-export async function upsertOAuthUser(
-  provider: Exclude<AuthProvider, "local">,
-  input: UpsertOAuthUserInput,
-): Promise<UserRecord> {
-  const username = input.email.trim().toLowerCase();
-  const email = username;
-
-  const bySub = await findUserByProviderAndSubject(provider, input.sub);
-  if (bySub) {
-    await updateUser(bySub.username, {
-      email,
-      authProvider: provider,
-      providerSubject: input.sub,
-      schoolId: input.schoolId,
-      role: input.role,
-    });
-    const updated = await findUserByUsername(bySub.username);
-    if (updated) return updated;
-  }
-
-  const byEmail = await findUserByEmail(email);
-  if (byEmail) {
-    await updateUser(byEmail.username, {
-      email,
-      authProvider: provider,
-      providerSubject: input.sub,
-      schoolId: input.schoolId,
-      role: input.role,
-    });
-    const updated = await findUserByUsername(byEmail.username);
-    if (updated) return updated;
-  }
-
-  const created: UserRecord = {
-    username,
-    passwordHash: null,
-    role: input.role,
-    email,
-    authProvider: provider,
-    providerSubject: input.sub,
-    schoolId: input.schoolId,
-    status: "active",
-  };
-
-  const added = await addUser(created);
-  if (!added.ok) {
-    const again = await findUserByUsername(username);
-    if (again) return again;
-    throw new Error("OAUTH_USER_UPSERT_FAILED");
-  }
-  return created;
-}
-
-export type UpsertGoogleUserInput = UpsertOAuthUserInput;
-
-/** @deprecated ใช้ upsertOAuthUser('google', input) */
-export async function upsertGoogleUser(
-  input: UpsertGoogleUserInput,
-): Promise<UserRecord> {
-  return upsertOAuthUser("google", input);
 }
